@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2020_07_20_150508) do
     t.bigint "user_id", null: false
     t.bigint "home_id", null: false
     t.float "shares_of_ownership"
-    t.boolean "is_admin"
+    t.boolean "is_admin", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["home_id"], name: "index_ownerships_on_home_id"
