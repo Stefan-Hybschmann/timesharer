@@ -1,7 +1,7 @@
 class Home < ApplicationRecord
-  has_many :bookings
-  has_many :ownerships
-  has_many :notes
+  has_many :bookings, dependent: :destroy
+  has_many :ownerships, dependent: :destroy
+  has_many :notes, dependent: :destroy
   has_many :users, through: :ownerships
 
   validates :country, :address, :maximum_no_of_guest, presence: true
