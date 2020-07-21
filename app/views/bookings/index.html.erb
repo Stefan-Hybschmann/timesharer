@@ -1,0 +1,12 @@
+<h1>My bookings:</h1>
+<br>
+<p><strong>You have booked Home.name</strong></p>
+<% @bookings.each do |booking| %>
+  <div class="booking-cards">
+    <p>For <%= booking.end_date - booking.start_date %> days</p>
+    <p>From the <%= booking.start_date %></p>
+    <p>To the <%= booking.end_date %></p>
+    <p>For <%= booking.no_of_guest %> guests</p>
+  </div>
+  <hr>
+<% end %>
