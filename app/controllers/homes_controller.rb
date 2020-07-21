@@ -3,6 +3,12 @@ class HomesController < ApplicationController
     @homes = policy_scope(Home)
   end
 
+
+  def show
+    @home =  Home.find(params[:id])
+    authorize @home
+  end
+
   def new
     @home = Home.new
   end
