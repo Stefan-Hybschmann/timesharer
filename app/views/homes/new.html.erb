@@ -1,5 +1,6 @@
 <h1>Add your new home</h1>
 <%= simple_form_for(@home) do |f| %>
+  <%= f.input :home_name %>
   <%= f.input :country, as: :country %>
   <%= f.input :city %>
   <%= f.input :address %>
