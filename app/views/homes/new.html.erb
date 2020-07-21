@@ -1,0 +1,7 @@
+<%= simple_form_for(@home) do |f| %>
+  <%= f.input :country %>
+  <%= f.input :city %>
+  <%= f.input :address %>
+  <%= f.input :maximum_no_of_guest => %w[1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20+], include_blank: false, include_hidden: false, prompt: "Select maximum no. of guests" %>
+  <%= f.input :no_of_bed, :collection => %w[1 2 3 4 5 6 7 8 9 10+], include_blank: false, include_hidden: false, prompt: "Select no. of beds" %>
+<% end %>
