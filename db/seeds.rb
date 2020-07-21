@@ -34,11 +34,11 @@ Home.create!(country: 'Spain', address: 'Madrid', maximum_no_of_guest: 4, no_of_
 
 puts "Creating new bookings seeds"
 Booking.create!(user: User.first, home: Home.first, start_date: "2020-10-10", end_date: "2020-11-10", no_of_guest: 6)
-Booking.create!(user_id: User.first.id, home_id: Home.first.id, start_date: "2021-10-10", end_date: "2021-12-10", no_of_guest: 4)
-Booking.create!(user_id: User.first.id, home_id: Home.first.id, start_date: "2022-10-10", end_date: "2022-10-11", no_of_guest: 2)
+Booking.create!(user: User.first, home: Home.first, start_date: "2021-10-10", end_date: "2021-12-10", no_of_guest: 4)
+Booking.create!(user: User.first, home: Home.first, start_date: "2022-10-10", end_date: "2022-10-11", no_of_guest: 2)
 
 
 puts "Creating new ownerships seeds"
-Ownership.create!(user_id: User.first.id, home_id: Home.first.id, shares_of_ownership: 30, is_admin: true)
-Ownership.create!(user_id: User.first.id, home_id: Home.first.id, shares_of_ownership: 30, is_admin: true)
-Ownership.create!(user_id: User.first.id, home_id: Home.first.id, shares_of_ownership: 30, is_admin: true)
+Ownership.create!(user: User.first, home: Home.first, shares_of_ownership: 30, is_admin: true)
+Ownership.create!(user: User.first, home: Home.first, shares_of_ownership: 30, is_admin: true)
+Ownership.create!(user: User.first, home: Home.first, shares_of_ownership: 30, is_admin: true)
