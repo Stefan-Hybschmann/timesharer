@@ -3,6 +3,10 @@ class HomePolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+
+    def index?
+      true
+    end
   end
   def show?
     true
