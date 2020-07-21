@@ -1,8 +1,8 @@
 class HomesController < ApplicationController
-
   def index
+    @homes = policy_scope(Home)
   end
-  
+
   def new
     @home = Home.new
   end
@@ -21,5 +21,5 @@ class HomesController < ApplicationController
 
   def home_params
     params.require(:home).permit(:country, :city, :address, :maximum_no_of_guest, :no_of_bed)
-
+  end
 end
