@@ -8,3 +8,7 @@
     <button class="btn border"> CHeck-Out</button>
     <button class="btn border"> Guests</button>
 </div>
+
+<%= link_to "Edit this Home", edit_home_path(@home) %>
+<%= link_to "Delete this Home", home_path(@home), method: :delete %>
+<%= link_to "Back to Overview Page", homes_path %>

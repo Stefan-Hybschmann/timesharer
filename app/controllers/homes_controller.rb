@@ -42,6 +42,13 @@ class HomesController < ApplicationController
     end
   end
 
+  def destroy
+    @home = Home.find(params[:id])
+    @home.destroy
+    authorize @home
+    redirect_to homes_path, notice: 'Your home was successfully deleted!'
+  end
+
   private
 
   def home_params
