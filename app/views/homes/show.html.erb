@@ -8,6 +8,7 @@
     <button class="btn border"> CHeck-Out</button>
     <button class="btn border"> Guests</button>
 </div>
+
 <div class="txt-form">
     <h1>Create a Booking</h1>
 </div>
@@ -18,4 +19,9 @@
     <%= f.input :no_of_guest, collection: %w[1 2 3 4 5 6 7 8 9 10] %>
     <%= f.submit %>
     <% end %>
-</div>
+
+
+<%= link_to "Edit this Home", edit_home_path(@home) %>
+<%= link_to "Delete this Home", home_path(@home), method: :delete %>
+<%= link_to "Back to Overview Page", homes_path %>
+

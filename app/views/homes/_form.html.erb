@@ -1,0 +1,18 @@
+<%= simple_form_for(@home) do |f| %>
+  <%= f.input :home_name %>
+  <%= f.input :country, as: :country %>
+  <%= f.input :city %>
+  <%= f.input :address %>
+  <div>
+    <%= label_tag "shares_of_ownership" %>
+    <%= number_field_tag :shares_of_ownership %>
+  </div>
+  <%= f.input :maximum_no_of_guest %>
+  <%= f.input :no_of_bed, :collection => %w[1 2 3 4 5 6+], include_blank: false, include_hidden: false, prompt: "Select no. of beds" %>
+  <!-- Add Javascript for the below form to show up when no.of.bed is more than 6 -->
+  <div class="form-group">
+    <label for="beds">No. of beds</label>
+    <input id="beds" class="form-control" type="number" name="user[no_of_bed]">
+  </div>
+  <%= f.submit %>
+<% end %>
