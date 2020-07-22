@@ -25,6 +25,23 @@ class HomesController < ApplicationController
     end
   end
 
+  def edit
+    @home = Home.find(params[:id])
+    authorize @home
+  end
+
+  def update
+    @home = Home.find(params[:id])
+    Home.update(home_params)
+    authorize @home
+    if @home.save
+      create_ownership
+      redirect_to home_path(@home), notice: 'Your home was successfully updated!'
+    else
+      render :edit
+    end
+  end
+
   private
 
   def home_params
