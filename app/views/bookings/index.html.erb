@@ -1,13 +1,32 @@
-<h1>My bookings:</h1>
-<br>
-<p><strong>You have booked Home.name</strong></p>
-
-<% @bookings.each do |booking| %>
-  <div class="booking-cards">
-    <p>For <%= booking.end_date - booking.start_date %> days</p>
-    <p>From the <%= booking.start_date %></p>
-    <p>To the <%= booking.end_date %></p>
-    <p>For <%= booking.no_of_guest %> guests</p>
+<div class="image-banner">
+  <img class="banner-image" src="https://images.unsplash.com/photo-1574529499335-2e28af85854d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="vacation home">
+  <img class="banner-image" src="https://images.unsplash.com/photo-1564527424873-ced422096181?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="vacation home">
+  <img class="banner-image" src="https://images.unsplash.com/photo-1576109324778-3ec50ebdf7db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="vacation home">
+</div>
+<div class="my-bookings">
+  <h1>My bookings:</h1>
+  <div class="bookings-table">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Vacation home</th>
+          <th>Check in</th>
+          <th>Check out</th>
+          <th>Days total</th>
+          <th>Number of guests</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @bookings.each do |booking| %>
+          <tr>
+            <td>Test</td>
+            <td><%= booking.start_date %></td>
+            <td><%= booking.end_date %></td>
+            <td><%= booking.end_date - booking.start_date %></td>
+            <td><%= booking.no_of_guest %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
-  <hr>
-<% end %>
+</div>
