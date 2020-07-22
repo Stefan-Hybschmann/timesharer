@@ -6,6 +6,7 @@ class HomesController < ApplicationController
   def show
     @home =  Home.find(params[:id])
     authorize @home
+    @note = Note.new
   end
 
   def new
