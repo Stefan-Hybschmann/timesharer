@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :homes, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :bookings, only: [:index, :new, :create]
   end
+  resources :bookings, only: [:edit, :update, :destroy]
   resources :users, only: [:show]
 end
