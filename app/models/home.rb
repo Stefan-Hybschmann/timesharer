@@ -7,6 +7,7 @@ class Home < ApplicationRecord
   validates :country, :address, :maximum_no_of_guest, presence: true
   validates :maximum_no_of_guest, :no_of_bed, numericality: { greater_than_or_equal_to: 0 }
 
+  # For ranking by shares of ownerships
   def bigger_tenants(current_user)
     current_user_ownership = ownerships.find do |ownership|
       ownership.user == current_user
@@ -18,4 +19,7 @@ class Home < ApplicationRecord
 
     bigger_ownerships.map(&:user)
   end
+
+  accepts_nested_attributes_for :bookings
+
 end
