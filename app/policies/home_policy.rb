@@ -4,10 +4,10 @@ class HomePolicy < ApplicationPolicy
       scope.all
     end
   end
-
   def index?
     true
   end
+
   def show?
     true
   end
@@ -15,7 +15,6 @@ class HomePolicy < ApplicationPolicy
   def create?
     true
   end
-
 
   def update?
     true

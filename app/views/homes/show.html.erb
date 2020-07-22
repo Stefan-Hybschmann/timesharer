@@ -4,8 +4,8 @@
 
 <div class="namer"> <h1> <%= @home.country %></h1> </div>
 <div class="butonis">
-    <button class="btn border">CHeck-IN </button>
-    <button class="btn border"> CHeck-Out</button>
+    <button class="btn border">Check-in</button>
+    <button class="btn border"> Check-out</button>
     <button class="btn border"> Guests</button>
 </div>
 
@@ -20,3 +20,14 @@
 <%= link_to "Delete this Home", home_path(@home), method: :delete %>
 <%= link_to "Back to Overview Page", homes_path %>
 
+
+<% @home.notes.each do |note| %>
+  <div class="note-cards">
+    <p>note</p>
+  </div>
+<% end %>
+
+<%= simple_form_for ([@home, @note]) do |f| %>
+  <%= f.input :content %>
+  <%= f.submit %>
+<% end %>
