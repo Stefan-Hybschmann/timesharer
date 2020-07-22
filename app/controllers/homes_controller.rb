@@ -1,8 +1,7 @@
 class HomesController < ApplicationController
   def index
-    @homes = policy_scope(Home)
+    @homes = policy_scope(Home).joins(:ownerships, :users).where("ownerships.user_id = #{current_user.id}")
   end
-
 
   def show
     @home =  Home.find(params[:id])

@@ -7,13 +7,13 @@ class HomePolicy < ApplicationPolicy
     def index?
       true
     end
-  end
-  def show?
-    true
-  end
+    def show?
+      true
+    end
 
-  def create?
-    true
+    def create?
+      true
+    end
   end
 
   def update?
