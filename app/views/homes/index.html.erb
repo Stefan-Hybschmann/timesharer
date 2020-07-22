@@ -6,6 +6,8 @@
     <p><%= home.city %></p>
     <p><%= home.address %></p>
     <p>Max #<%= home.maximum_no_of_guest %> guests</p>
+    <%= link_to "Select this home", home_path(home) %>
   </div>
   <hr>
 <% end %>
+

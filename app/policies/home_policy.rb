@@ -3,16 +3,25 @@ class HomePolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+  end
 
     def index?
       true
     end
-  end
-  def show?
+
+    def show?
+      true
+    end
+
+    def create?
+      true
+    end
+
+  def update?
     true
   end
 
-  def create?
+  def destroy?
     true
   end
 end
