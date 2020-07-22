@@ -4,8 +4,8 @@ class HomesController < ApplicationController
   end
 
   def show
+    @home = Home.find(params[:id])
     @booking = Booking.new
-    @home =  Home.find(params[:id])
     authorize @home
   end
 
