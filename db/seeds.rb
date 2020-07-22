@@ -27,9 +27,9 @@ User.create!(name: "Jea", email: "jea@jea.com", password: '123456', phone_number
 
 
 puts "Creating new homes seeds"
-Home.create!(country: 'Denmark', address: 'Copenhagen', maximum_no_of_guest: 8, no_of_bed: 10)
-Home.create!(country: 'Germany', address: 'Berlin', maximum_no_of_guest: 10, no_of_bed: 10)
-Home.create!(country: 'Spain', address: 'Madrid', maximum_no_of_guest: 4, no_of_bed: 10)
+Home.create!(home_name: 'The Little Mermaid', country: 'Denmark', address: 'Copenhagen', maximum_no_of_guest: 8, no_of_bed: 10)
+Home.create!(home_name: 'The Dark Forest', country: 'Germany', address: 'Berlin', maximum_no_of_guest: 10, no_of_bed: 10)
+Home.create!(home_name: 'Cielo y Mar', country: 'Spain', address: 'Madrid', maximum_no_of_guest: 4, no_of_bed: 10)
 
 
 puts "Creating new bookings seeds"
@@ -39,6 +39,8 @@ Booking.create!(user: User.last, home: Home.third, start_date: "2022-10-10", end
 
 
 puts "Creating new ownerships seeds"
-Ownership.create!(user: User.first, home: Home.first, shares_of_ownership: 30, is_admin: true)
+Ownership.create!(user: User.first, home: Home.first, shares_of_ownership: 20, is_admin: true)
+Ownership.create!(user: User.second, home: Home.first, shares_of_ownership: 30, is_admin: true)
+Ownership.create!(user: User.last, home: Home.first, shares_of_ownership: 50, is_admin: true)
 Ownership.create!(user: User.first, home: Home.second, shares_of_ownership: 30, is_admin: true)
 Ownership.create!(user: User.last, home: Home.third, shares_of_ownership: 30, is_admin: true)
