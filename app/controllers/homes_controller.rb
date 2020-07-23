@@ -5,6 +5,7 @@ class HomesController < ApplicationController
 
   def show
     @home = Home.find(params[:id])
+    @bookings_json = bookings_json
     @booking = Booking.new
     authorize @home
     @note = Note.new
@@ -63,5 +64,16 @@ class HomesController < ApplicationController
     @ownership.home = @home
     @ownership.shares_of_ownership = params["shares_of_ownership"]
     @ownership.save
+  end
+
+  def bookings_json
+    hashes = @home.bookings.map do |booking|
+      {
+        title: booking.user.name,
+        start: booking.start_date,
+        end: booking.end_date
+      }
+    end
+    hashes.to_json
   end
 end
