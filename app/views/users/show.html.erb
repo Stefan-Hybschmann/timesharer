@@ -1,5 +1,21 @@
-<div>
-    <h1><%= @user.name %> </h1>
-    <h3><%= @user.phone_number %> </h3>
-    <h3><%= @user.email %> </h3>
+<div class="container">
+  <div class="card-product">
+    <img src="/images/person.jpg"/>
+    <div class="card-product-infos">
+      <h2><%= @user.name %></h2>
+      <h2><%= @user.phone_number %> </h2>
+      <h2><%= @user.email %> </h2>
+      <p>Product description with <strong>relevant info</strong> only.
+      In software development and product management, a user story is an informal, natural language
+      description of one or more features of a software system. User stories are often written from
+      the perspective of an end user or user of a system. They are often recorded on index cards, on
+      st-it notes, or digitally in project management software[1] Depending on the project, user
+      stories may be written by various stakeholders including clients, users, managers, or development
+       team members.
+      </p>
+      <div class="edit-profile-btn">
+        <%= link_to 'Edit Profile', edit_user_registration_path %>
+      </div>
+    </div>
+  </div>
 </div>
