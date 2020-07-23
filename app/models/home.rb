@@ -6,5 +6,20 @@ class Home < ApplicationRecord
 
   validates :country, :address, :maximum_no_of_guest, presence: true
   validates :maximum_no_of_guest, :no_of_bed, numericality: { greater_than_or_equal_to: 0 }
+
+  # For ranking by shares of ownerships, DO NOT DELETE
+  # def bigger_owners(current_user)
+  #   current_user_ownership = ownerships.find do |ownership|
+  #     ownership.user == current_user
+  #   end
+
+  #   bigger_ownerships = ownerships.select do |ownership|
+  #     ownership.shares_of_ownership > current_user_ownership.shares_of_ownership
+  #   end
+
+  #   bigger_ownerships.map(&:user)
+  # end
+
   accepts_nested_attributes_for :bookings
+
 end
