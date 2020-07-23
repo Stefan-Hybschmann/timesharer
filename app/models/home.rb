@@ -20,6 +20,9 @@ class Home < ApplicationRecord
   #   bigger_ownerships.map(&:user)
   # end
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   accepts_nested_attributes_for :bookings
 
 end

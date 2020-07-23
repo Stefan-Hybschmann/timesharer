@@ -28,7 +28,7 @@ User.create!(name: "Juljan", email: "juljan@juljan.com", password: '123456', pho
 
 
 puts "Creating new homes seeds"
-Home.create!(home_name: 'The Little Mermaid', country: 'Denmark', address: 'Copenhagen', maximum_no_of_guest: 8, no_of_bed: 10)
+Home.create!(home_name: 'The Little Mermaid', country: 'Denmark', address: 'Aarhus University Park', maximum_no_of_guest: 8, no_of_bed: 10)
 Home.create!(home_name: 'The Dark Forest', country: 'Germany', address: 'Berlin', maximum_no_of_guest: 10, no_of_bed: 10)
 Home.create!(home_name: 'Cielo y Mar', country: 'Spain', address: 'Madrid', maximum_no_of_guest: 4, no_of_bed: 10)
 

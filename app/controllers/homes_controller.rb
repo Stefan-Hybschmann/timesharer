@@ -1,6 +1,14 @@
 class HomesController < ApplicationController
   def index
     @homes = policy_scope(Home).joins(:ownerships, :users).where("ownerships.user_id = #{current_user.id}")
+
+    @homes = Home.geocoded
+    @markers = @homes.map do |home|
+      {
+        lat: home.latitude,
+        lng: home.longitude
+      }
+    end
   end
 
   def show
@@ -9,6 +17,14 @@ class HomesController < ApplicationController
     @booking = Booking.new
     authorize @home
     @note = Note.new
+
+    @homes = Home.geocoded
+    @markers = [
+      {
+        lat: @home.latitude,
+        lng: @home.longitude
+      }
+    ]
   end
 
   def new
