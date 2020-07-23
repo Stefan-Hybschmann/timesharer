@@ -1,6 +1,9 @@
-.alert {
+.ts-flash-message {
   position: fixed;
-  bottom: 16px;
-  right: 16px;
+  top: 55px;
+  right: 11%;
+  opacity: 1;
   z-index: 1000;
+  transition: opacity 8s;
+  opacity: 0;
 }
