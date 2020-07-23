@@ -14,11 +14,21 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.home_id = params[:home_id]
     authorize @booking
-    if @booking.save
-      redirect_to homes_path, notice: 'Your home was successfully created!'
+    @home = Home.find(params[:home_id])
+    if @home.bigger_tenants.empty?
+      if @booking.save
+        redirect_to homes_path, notice: 'Your home was successfully created!'
+      else
+        render :new
+      end
+    elsif @booking.valid?
+      bigger_tenants = @home.bigger_tenants(current_user)
+      # iterate the bigger_tenants and send them an email or message
+      redirect_to confirmation_path
     else
       render :new
     end
+
   end
 
   def edit; end
