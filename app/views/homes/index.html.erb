@@ -1,13 +1,20 @@
-<h1>Your vacation homes:</h1>
-
-<% @homes.each do |home| %>
-  <div class="home-cards">
-    <%= link_to "", home_path(home), class: "link-spanner" %>
-    <p><%= home.country %></p>
-    <p><%= home.city %></p>
-    <p><%= home.address %></p>
-    <p>Max #<%= home.maximum_no_of_guest %> guests</p>
-  </div>
-  <hr>
-<% end %>
+<div class="container-of-cards">
+  <h1>Your vacation homes:</h1>
+  <% @homes.each do |home| %>
+    <div class="home-cards">
+      <%= link_to "", home_path(home), class: "link-spanner" %>
+      <div class="home-cards-image">
+        <img class="home-image" src="https://images.unsplash.com/photo-1563700562181-9ee3d27e24ae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
+      </div>
+      <div class="home-cards-body">
+        <h6> <%= home.home_name %></h6>
+        <hr class="home-cards-hr">
+        <p>Country: <%= home.country %></p>
+        <p>City: <%= home.address %></p>
+        <p>Fits: #<%= home.maximum_no_of_guest %> guests</p>
+      </div>
+    </div>
+    <hr>
+  <% end %>
+</div>
 
