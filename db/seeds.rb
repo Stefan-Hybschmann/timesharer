@@ -24,6 +24,7 @@ puts "Creating new user seeds"
 User.create!(name: "Stefan Hybschmann", email: "stefan@stefan.com", password: '123456', phone_number: '+44 12345678')
 User.create!(name: "Billy", email: "billy@billy.com", password: '123456', phone_number: '+38 12345679')
 User.create!(name: "Jea", email: "jea@jea.com", password: '123456', phone_number: '12345678')
+User.create!(name: "Juljan", email: "juljan@juljan.com", password: '123456', phone_number: '987654321')
 
 
 puts "Creating new homes seeds"
@@ -34,7 +35,8 @@ Home.create!(home_name: 'Cielo y Mar', country: 'Spain', address: 'Madrid', maxi
 
 puts "Creating new bookings seeds"
 Booking.create!(user: User.first, home: Home.first, start_date: "2020-10-10", end_date: "2020-11-10", no_of_guest: 6)
-Booking.create!(user: User.first, home: Home.second, start_date: "2021-10-10", end_date: "2021-12-10", no_of_guest: 4)
+Booking.create!(user: User.second, home: Home.first, start_date: "2021-10-10", end_date: "2021-12-10", no_of_guest: 4)
+Booking.create!(user: User.second, home: Home.second, start_date: "2021-11-10", end_date: "2021-12-10", no_of_guest: 3)
 Booking.create!(user: User.last, home: Home.third, start_date: "2022-10-10", end_date: "2022-10-11", no_of_guest: 2)
 
 
@@ -42,5 +44,6 @@ puts "Creating new ownerships seeds"
 Ownership.create!(user: User.first, home: Home.first, shares_of_ownership: 20, is_admin: true)
 Ownership.create!(user: User.second, home: Home.first, shares_of_ownership: 30, is_admin: true)
 Ownership.create!(user: User.last, home: Home.first, shares_of_ownership: 50, is_admin: true)
-Ownership.create!(user: User.first, home: Home.second, shares_of_ownership: 30, is_admin: true)
+Ownership.create!(user: User.second, home: Home.second, shares_of_ownership: 50, is_admin: true)
+Ownership.create!(user: User.third, home: Home.second, shares_of_ownership: 50, is_admin: false)
 Ownership.create!(user: User.last, home: Home.third, shares_of_ownership: 30, is_admin: true)
