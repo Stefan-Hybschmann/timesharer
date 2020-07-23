@@ -1,12 +1,12 @@
-<h1>See all vacation homes</h1>
+<h1>Your vacation homes:</h1>
 
 <% @homes.each do |home| %>
   <div class="home-cards">
+    <%= link_to "", home_path(home), class: "link-spanner" %>
     <p><%= home.country %></p>
     <p><%= home.city %></p>
     <p><%= home.address %></p>
     <p>Max #<%= home.maximum_no_of_guest %> guests</p>
-    <%= link_to "Select this home", home_path(home) %>
   </div>
   <hr>
 <% end %>
