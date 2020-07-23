@@ -17,11 +17,11 @@ class BookingsController < ApplicationController
     @home = Home.find(params[:home_id])
     # For Ranking, DO NOT DELETE!
     # if @home.bigger_owners.empty?
-      if @booking.save
-        redirect_to homes_path, notice: 'Your home was successfully created!'
-      else
-        render :new
-      end
+    if @booking.save
+      redirect_to homes_path, notice: 'Your home was successfully created!'
+    else
+      render home_bookings_path
+    end
     # elsif @booking.valid?
       # bigger_owners = @home.bigger_owners(current_user)
       # iterate the bigger_owners and send them an email or message - to do
