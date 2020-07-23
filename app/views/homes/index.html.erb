@@ -1,13 +1,121 @@
-<h1>Your vacation homes:</h1>
+<style>
+.carousel-item {
+  height: 30vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
-<% @homes.each do |home| %>
-  <div class="home-cards">
-    <%= link_to "", home_path(home), class: "link-spanner" %>
-    <p><%= home.country %></p>
-    <p><%= home.city %></p>
-    <p><%= home.address %></p>
-    <p>Max #<%= home.maximum_no_of_guest %> guests</p>
+</style>
+
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<ol class="carousel-indicators">
+  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+</ol>
+<div class="carousel-inner" role="listbox">
+  <!-- Slide One - Set the background image for this slide in the line below -->
+  <div class="carousel-item active" style="background-image: url('https://cdn-1.matterport.com/apifs/models/wZEzJHC5Nvu/images/tct3r5T3B8t/tct3r5T3B8t-Living_Room.jpg?t=2-5bb60d41494dfe34774febe6cc7be28aba274df4-1596020906-1&width=1920&height=1080&fit=crop&disable=upscale')">
+    <div class="carousel-caption d-none d-md-block">
+      <h2 class="display-4">First Slide</h2>
+      <p class="lead">This is a description for the first slide.</p>
+    </div>
   </div>
-  <hr>
-<% end %>
+  <!-- Slide Two - Set the background image for this slide in the line below -->
+  <div class="carousel-item" style="background-image: url('https://wallpapercave.com/wp/wp2406649.jpg')">
+    <div class="carousel-caption d-none d-md-block">
+      <h2 class="display-4">Second Slide</h2>
+      <p class="lead">This is a description for the second slide.</p>
+    </div>
+  </div>
+  <!-- Slide Three - Set the background image for this slide in the line below -->
+  <div class="carousel-item" style="background-image: url('https://www.technocrazed.com/wp-content/uploads/2015/12/Home-Wallpaper-3.jpg')">
+    <div class="carousel-caption d-none d-md-block">
+      <h2 class="display-4">Third Slide</h2>
+      <p class="lead">This is a description for the third slide.</p>
+    </div>
+  </div>
+</div>
+<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
 
+
+<!-- Banner Ends Here -->
+
+<div class="latest-products">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="section-heading">
+        <h2>Featured Homes</h2>
+        <a href="packages.html">view more <i class="fa fa-angle-right"></i></a>
+      </div>
+    </div>
+
+
+    <% @homes.each do |home| %>
+    <div class="col-md-4">
+      <div class="product-item">
+      <%= link_to "", home_path(home), class: "link-spanner" %>
+        <a href="vacation-details.html"><img src="assets/images/product-1-370x270.jpg" alt=""></a>
+        <div class="down-content">
+          <a href="vacation-details.html"><h4>Limelight Lodge</h4></a>
+
+          <h6>$300 - $400</h6>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum incidunt, aperiam nostrum et. Voluptas vel labore numqua.</p>
+          <p><strong>Max #<%= home.maximum_no_of_guest %> guests</strong></p>
+          <div class="address">
+               <strong title="Available">
+               <i class="fa fa-map-marker"></i> </strong>
+               <%= home.country %>, <%= home.city %>, <%= home.address %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
+  </div>
+</div>
+</div>
+
+<div class="best-features">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="section-heading">
+        <h2>About Us</h2>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="left-content">
+        <p>Lorem ipsum dolor sit amet, <a href="#">consectetur</a> adipisicing elit. Explicabo, esse consequatur alias repellat in excepturi inventore ad <a href="#">asperiores</a> tempora ipsa. Accusantium tenetur voluptate labore aperiam molestiae rerum excepturi minus in pariatur praesentium, corporis, aliquid dicta.</p>
+        <ul class="featured-list">
+          <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+          <li><a href="#">Consectetur an adipisicing elit</a></li>
+          <li><a href="#">It aquecorporis nulla aspernatur</a></li>
+          <li><a href="#">Corporis, omnis doloremque</a></li>
+        </ul>
+        <a href="about-us.html" class="filled-button">Read More</a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="right-image">
+        <img src="assets/images/about-1-570x350.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+</div>
