@@ -1,0 +1,4 @@
+<h1>Edit your home</h1>
+<%= render "form", home: @home %>
+<%= link_to "back", home_path(@home) %>
+<%= link_to "Delete Home", home_path(@home), method: :delete, class: "btn btn-danger" %>

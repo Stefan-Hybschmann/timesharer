@@ -1,0 +1,35 @@
+<div class="banner1">
+    <img src="https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595508980/TimeSharer/house-on-the-lake-with-boathouse_eup482.jpg" class="banner1"/>
+</div>
+
+<div class="row">
+  <div class="col-md-8 offset-md-2 text-warning ">
+    <div id="bookings-calendar" data-bookings="<%= @bookings_json %>"></div>
+  </div>
+</div>
+
+<div class="namer"> <h1> <%= @home.country %></h1> </div>
+<div class="butonis">
+    <button class="btn border">Check-in</button>
+    <button class="btn border"> Check-out</button>
+    <button class="btn border"> Guests</button>
+</div>
+
+<div class="txt-form">
+    <h1>Create a Booking</h1>
+</div>
+
+<%= render 'bookings/form', home: @home, booking: @booking %>
+
+<%= link_to "Edit this Home", edit_home_path(@home), class: "btn btn-outline-secondary" %>
+
+<% @home.notes.each do |note| %>
+  <div class="note-cards">
+    <p>note</p>
+  </div>
+<% end %>
+
+<%= simple_form_for ([@home, @note]) do |f| %>
+  <%= f.input :content %>
+  <%= f.submit %>
+<% end %>
