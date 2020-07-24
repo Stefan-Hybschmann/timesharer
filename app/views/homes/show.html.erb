@@ -8,13 +8,6 @@
   </div>
 </div>
 
-<div class="namer"> <h1> <%= @home.country %></h1> </div>
-<div class="butonis">
-    <button class="btn border">Check-in</button>
-    <button class="btn border"> Check-out</button>
-    <button class="btn border"> Guests</button>
-</div>
-
 <div class="txt-form">
     <h1>Create a Booking</h1>
 </div>
@@ -23,17 +16,19 @@
 
 <%= link_to "Edit this Home", edit_home_path(@home) %>
 
-
-<%= simple_form_for ([@home, @note]) do |f| %>
-  <%= f.input :content %>
-  <%= f.submit 'Create Note', class: "btn btn-gradient"%>
-<% end %>
-
-<% @home.notes.each do |note| %>
-  <div class="note-cards">
-    <div class="note-cards">
-      <p> <strong><%= note.user.name %>:</strong> <%= note.content %></p>
-    </div>
-    <%= link_to 'Delete', note_path(note), method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-gradient" %>
+<div class="notes">
+  <div class="comment-form">
+    <%= simple_form_for ([@home, @note]), html: { class: "note-form" } do |f| %>
+      <%= f.input :content, label: "Leave a comment:" %>
+      <%= f.submit 'Create Note', class: "btn btn-gradient"%>
+    <% end %>
   </div>
-<% end %>
+  <div class="comments-index">
+    <% @home.notes.each do |note| %>
+      <div class="note-cards">
+        <p> <strong><%= note.user.name %>:</strong> <%= note.content %></p>
+        <%= link_to 'Delete', note_path(note), method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+      </div>
+    <% end %>
+  </div>
+</div>
