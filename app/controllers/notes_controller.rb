@@ -21,6 +21,12 @@ class NotesController < ApplicationController
       render "homes/show"
     end
   end
+  def destroy
+    @note = Note.find(params[:id])
+    @note.destroy
+    authorize @note
+    redirect_to home_path(@note.home), notice: 'Your note was successfully deleted!'
+  end
 
   private
 
