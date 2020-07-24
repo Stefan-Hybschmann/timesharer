@@ -31,6 +31,9 @@
 
 <% @home.notes.each do |note| %>
   <div class="note-cards">
-    <p> <strong><%= note.user.name %>:</strong> <%= note.content %></p>
+    <div class="note-cards">
+      <p> <strong><%= note.user.name %>:</strong> <%= note.content %></p>
+    </div>
+    <%= link_to 'Delete', note_path(note), method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-gradient" %>
   </div>
 <% end %>
