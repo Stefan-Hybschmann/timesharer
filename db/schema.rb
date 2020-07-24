@@ -57,8 +57,6 @@ ActiveRecord::Schema.define(version: 2020_07_24_114851) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "home_name"
-    t.float "latitude"
-    t.float "longitude"
   end
 
   create_table "notes", force: :cascade do |t|
