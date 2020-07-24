@@ -5,11 +5,15 @@ class NotePolicy < ApplicationPolicy
     end
   end
 
-  def new
+  def show?
     true
   end
 
-  def create
+  def new?
+    true
+  end
+
+  def create?
     true
   end
 end
