@@ -21,7 +21,7 @@
 
 <%= render 'bookings/form', home: @home, booking: @booking %>
 
-<%= link_to "Edit this Home", edit_home_path(@home), class: "btn btn-outline-secondary" %>
+<%= link_to "Edit this Home", edit_home_path(@home) %>
 
 <% @home.notes.each do |note| %>
   <div class="note-cards">
@@ -31,5 +31,5 @@
 
 <%= simple_form_for ([@home, @note]) do |f| %>
   <%= f.input :content %>
-  <%= f.submit %>
+  <%= f.submit 'Create Note', class: "btn btn-gradient"%>
 <% end %>
