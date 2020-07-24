@@ -8,11 +8,11 @@
     opacity: 0.6;
     transition: opacity 0.3s ease;
   }
-  
+
   .btn-ghost:hover {
     opacity: 1;
   }
-  
+
   .btn-flat {
     color: white;
     padding: 8px 24px;
@@ -21,12 +21,12 @@
     transition: background 0.3s ease;
     margin: 8px;
   }
-  
+
   .btn-flat:hover {
     background: #1BCB7F;
     color: white;
   }
-  
+
   .btn-gradient {
     color: white;
     padding: 8px 24px;
@@ -36,8 +36,11 @@
     transition: background 0.3s ease;
     border: 1px solid #0F60C4;
   }
-  
+
   .btn-gradient:hover {
     background: linear-gradient(#147EFF, #0F67DA);
     color: white;
+  }
+  #bookings-calendar {
+    width: 600px;
   }
