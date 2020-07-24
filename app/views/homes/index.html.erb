@@ -34,13 +34,12 @@
         </a>
   </div>
 
-
 <!-- Banner Ends Here -->
 
 <div class="container-of-cards">
   <h1>Your vacation homes:</h1>
   <hr>
-  <% @homes.each do |home| %>
+  <% current_user.homes.each do |home| %>
     <div class="home-cards">
       <%= link_to "", home_path(home), class: "link-spanner" %>
       <div class="home-cards-image">
