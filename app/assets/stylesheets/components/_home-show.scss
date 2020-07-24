@@ -10,14 +10,30 @@
     margin-left: auto;
 }
 
+.notes {
+  display: flex;
+  margin: 0 auto;
+  width: 800px;
+  background-color: white;
+  border-radius: 4px;
+  padding-top: 8px;
+}
+
 .note-cards {
   width: 400px;
   height: 50px;
   background-color: white;
-  border-radius: 2px;
+  border-radius: 4px;
   margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .note-cards p {
   padding-top: 8px;
+}
+.note-form {
+  width: 300px;
+  margin: 0 auto;
+  margin-right: 24px;
+  margin-left: 40px;
 }
