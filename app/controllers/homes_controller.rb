@@ -9,6 +9,7 @@ class HomesController < ApplicationController
     @booking = Booking.new
     authorize @home
     @note = Note.new
+    @notes = Note.all
   end
 
   def new
