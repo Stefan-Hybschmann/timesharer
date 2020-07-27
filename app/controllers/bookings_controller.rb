@@ -6,6 +6,8 @@ class BookingsController < ApplicationController
     @booking = edit
 
     @homes = Home.geocoded
+    # gives us all the homes which the current users have the bookings
+    @homes = @homes.joins(:bookings, :users).where("bookings.user_id = #{current_user.id}")
     @markers = @homes.map do |home|
       {
         lat: home.latitude,
