@@ -37,3 +37,9 @@ document.addEventListener('turbolinks:load', () => {
   flatpicker();
   initBookingsCalendar();
 });
+
+import { initMapbox } from '../plugins/init_mapbox';
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})
