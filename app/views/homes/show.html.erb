@@ -35,16 +35,16 @@
 
 <div class="container">
   <div class="row">
-    <div class="text-warning">
+    <div class="calendar">
       <div id="bookings-calendar" data-bookings="<%= @bookings_json %>"></div>
     </div>
     <div class="col-xs-12 col-md-4 col-lg-4">
         <div class="txt-form">
-          <h1>Create a Booking</h1>
+          <h2><strong>Create a Booking</strong></h2>
         </div>
-
         <%= render 'bookings/form', home: @home, booking: @booking %>
-        <%= link_to "Edit this Home", edit_home_path(@home), class: "btn btn-outline-secondary" %>
+        <br>
+          <%= link_to "Edit this Home", edit_home_path(@home), class: "btn btn-outline-info" %>
       </div>
     </div>
 </div>
