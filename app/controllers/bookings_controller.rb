@@ -28,7 +28,7 @@ class BookingsController < ApplicationController
     # For Ranking, DO NOT DELETE!
     # if @home.bigger_owners.empty?
     if @booking.save
-      redirect_to homes_path, notice: 'Your home was successfully created!'
+      redirect_to homes_path, booking_confirmed: 'Your home was successfully booked. TimeSharer wish you a happy stay, and hope to see you again soon. Remember you can see all of your bookings under "Bookings".'
     else
       render home_bookings_path
     end
