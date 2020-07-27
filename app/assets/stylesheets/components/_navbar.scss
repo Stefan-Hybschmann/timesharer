@@ -1,19 +1,4 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
-
-body {
-	font-family: 'Varela Round', sans-serif;
-}
 .form-control {
 	box-shadow: none;
 	font-weight: normal;
@@ -52,29 +37,7 @@ body {
 	color: #888;
 	font-size: 15px;
 }
-.search-box {
-	position: relative;
-}
-.search-box input {
-	padding-right: 35px;
-	border-color: #dfe3e8;
-	border-radius: 4px !important;
-	box-shadow: none
-}
-.search-box .input-group-text {
-	min-width: 35px;
-	border: none;
-	background: transparent;
-	position: absolute;
-	right: 0;
-	z-index: 9;
-	padding: 7px;
-	height: 100%;
-}
-.search-box i {
-	color: #a0a5b1;
-	font-size: 19px;
-}
+
 .navbar .sign-up-btn {
 	min-width: 110px;
 	max-height: 36px;
@@ -133,45 +96,7 @@ body {
 	width: 47%;
 	text-decoration: none;
 }
-.navbar .social-btn .facebook-btn {
-	background: #507cc0;
-}
-.navbar .social-btn .facebook-btn:hover {
-	background: #4676bd;
-}
-.navbar .social-btn .twitter-btn {
-	background: #64ccf1;
-}
-.navbar .social-btn .twitter-btn:hover {
-	background: #4ec7ef;
-}
-.navbar .social-btn .btn i {
-	margin-right: 5px;
-	font-size: 16px;
-	position: relative;
-	top: 2px;
-}
-.or-seperator {
-	margin-top: 32px;
-	text-align: center;
-	border-top: 1px solid #e0e0e0;
-}
-.or-seperator b {
-	color: #666;
-	padding: 0 8px;
-	width: 30px;
-	height: 30px;
-	font-size: 13px;
-	text-align: center;
-	line-height: 26px;
-	background: #fff;
-	display: inline-block;
-	border: 1px solid #e0e0e0;
-	border-radius: 50%;
-	position: relative;
-	top: -15px;
-	z-index: 1;
-}
+
 .navbar .action-buttons .dropdown-toggle::after {
 	display: none;
 }
@@ -201,7 +126,7 @@ body {
 }
 
 .form-group-div{
-	margin: 20px; 
+	margin: 20px;
 	width: 200px;
 }
 .action-dropdown-menu, .action-form, .show{
