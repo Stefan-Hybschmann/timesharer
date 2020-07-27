@@ -4,16 +4,16 @@
   <img class="banner-image" src="https://images.unsplash.com/photo-1576109324778-3ec50ebdf7db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="vacation home">
 </div>
 <div class="my-bookings">
-  <h1>My bookings:</h1>
+  <h1><strong>My Bookings</strong></h1>
   <div class="bookings-table">
-    <table class="table table-bordered">
+    <table class="table">
       <thead>
         <tr>
-          <th>Vacation home</th>
-          <th>Check in</th>
-          <th>Check out</th>
-          <th>Days total</th>
-          <th>Number of guests</th>
+          <th><i class="fas fa-home"></i>Home</th>
+          <th><i class="fas fa-plane-arrival"></i>Check in</th>
+          <th><i class="fas fa-plane-departure"></i>Check out</th>
+          <th><i class="fas fa-moon"></i></i>Nights in total</th>
+          <th><i class="fas fa-users"></i>No. of guests</th>
         </tr>
       </thead>
       <tbody>
@@ -25,8 +25,9 @@
             <td><%= (booking.end_date - booking.start_date).to_i %></td>
             <td><%= booking.no_of_guest %></td>
             <td>
-              <%= link_to 'Edit', edit_booking_path(booking), class: 'btn btn-gradient' %>
-              <%= link_to 'Delete', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-gradient" %>
+              <%= link_to 'View', home_path(booking.home), class: 'btn btn-info' %>
+              <%= link_to 'Edit', edit_booking_path(booking), class: 'btn btn-outline-info' %>
+              <%= link_to 'Delete', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-outline-secondary" %>
             </td>
           </tr>
         <% end %>
@@ -34,7 +35,7 @@
     </table>
   </div>
   <div id="map"
-     style="width: 100%; height: 600px;"
+     style="width: 100%; height: 600px; margin-top: 40px;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>

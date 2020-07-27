@@ -8,16 +8,35 @@
   height: 100%;
 }
 
-.my-bookings h1, p {
-  text-align: left;
+.my-bookings h1 {
+  text-align: center;
+  color: #065143;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.my-bookings p {
+  text-align: center;
+  color: #065143;
   margin-top: 32px;
   margin-bottom: 32px;
 }
 
 .bookings-table {
   background-color: white;
-  width: 80%;
+  color: #065143;
+  width: 90%;
   margin: 0 auto;
 }
 
+.bookings-table th {
+  background-color: white;
+  color: #065143;
+  text-align: center;
+}
 
+.bookings-table td {
+  background-color: white;
+  color: #065143;
+  text-align: center;
+}
