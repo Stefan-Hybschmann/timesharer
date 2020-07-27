@@ -37,9 +37,15 @@ document.addEventListener('turbolinks:load', () => {
   flatpicker();
   initBookingsCalendar();
 });
-​
+
 document.addEventListener('readystatechange', (event) => {
   if (document.readyState === 'complete') {
     adjustCalendarSize()
   }
 });
+
+import { initMapbox } from '../plugins/init_mapbox';
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})

@@ -30,6 +30,7 @@ User.create!(name: "Juljan", email: "juljan@juljan.com", password: '123456', pho
 
 
 puts "Creating new homes seeds"
+
 little_mermaid = Home.create!(home_name: 'The Little Mermaid', country: 'Denmark', city: 'Copenhagen', address: 'Nyhavn 45, 1051', maximum_no_of_guest: 10, no_of_bed: 10)
 dark_forest = Home.create!(home_name: 'The Dark Forest', country: 'Germany', city: 'Berlin', address: 'Colomierstraße 3, 14109', maximum_no_of_guest: 8, no_of_bed: 8)
 cielo_y_mar = Home.create!(home_name: 'Cielo y Mar', country: 'Spain', city: 'Barcelona', address: 'Passeig de Garcia Faria, 49, 08019', maximum_no_of_guest: 12, no_of_bed: 10)
