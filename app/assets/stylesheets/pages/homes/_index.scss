@@ -1,3 +1,17 @@
+.container-of-cards {
+  width: 600px;
+  margin: 0 auto;
+  background-color: white;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.container-of-cards h1 {
+  padding-top: 24px;
+  margin: 24px auto;
+
+}
+
 .link-spanner {
   position: absolute;
   width: 100%;
@@ -7,7 +21,39 @@
 }
 
 .home-cards {
+  display: flex;
   position: relative;
   background-color: white;
   height: 150px;
+  width: 500px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  margin: 0 auto;
 }
+
+.home-cards-image img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+
+.home-cards-body h6 {
+  font-weight: bold;
+  margin: 8px 0 0 16px;
+  text-align: left;
+}
+
+.home-cards-body p {
+  margin: 0 0 0 16px;
+  text-align: left;
+  opacity: 0.5;
+  font-size: 80%;
+}
+
+.home-cards-hr {
+  width: 80%;
+}
+

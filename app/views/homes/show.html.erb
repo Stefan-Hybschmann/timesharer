@@ -1,35 +1,69 @@
-<div class="banner1">
-    <img src="https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595508980/TimeSharer/house-on-the-lake-with-boathouse_eup482.jpg" class="banner1"/>
+<div class="container-fluid" style="margin-top: 80px; margin-bottom:15px">
+    <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="9000">
+        <div class="carousel-inner row w-10 mxauto" role="listbox">
+            <div class="carousel-item1 one col-md-4 active">
+                <img class="img-fluid mx-auto d-bloc" src="https://www.iteproducts.co.za/wp-content/uploads/2019/07/J26203_iTe_Image-Resize-600x400px-CEMOX14.jpg" alt="slide 1">
+            </div>
+            <div class="carousel-item1 single col-md-4">
+                <img class="img-fluid mx-auto d-block" src="https://www.elementoncoolumbeach.com.au/site/wp-content/uploads/apartment-3-bed-superior-4.jpg" alt="slide 2">
+            </div>
+            <div class="carousel-item1 single col-md-4">
+                <img class="img-fluid mx-auto d-block" src="https://www.breezemooloolaba.com.au/site/wp-content/uploads/2019/03/1200-2bed-premium-ocean-view-mooloolaba-accommodation2-1.jpg" alt="slide 3">
+            </div>
+            <div class="carousel-item single col-md-4">
+                <img class="img-fluid mx-auto d-block" src="https://www.bigwhite.com/sites/default/files/inline-images/Winter-Accom-Copper-Kettle-600x400px.jpg" alt="slide 4">
+            </div>
+            <div class="carousel-item single col-md-4">
+                <img class="img-fluid mx-auto d-block" src="https://c1.thejournal.ie/media/2020/03/photo-1567767292278-a4f21aa2d36e-752x501.jpeg" alt="slide 5">
+            </div>
+            <div class="carousel-item single col-md-4">
+                <img class="img-fluid mx-auto d-block" src="https://www.iteproducts.co.za/wp-content/uploads/2019/07/J26203_iTe_Image-Resize-600x400px-CEMOX14.jpg" alt="slide 6">
+            </div>
+
+        </div>
+        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+            <i class="fa fa-chevron-left fa-lg text-muted"></i>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next text-faded" href="#carouselExample" role="button" data-slide="next">
+            <i class="fa fa-chevron-right fa-lg text-muted"></i>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
 </div>
 
-<div class="row">
-  <div class="col-md-8 offset-md-2 text-warning ">
-    <div id="bookings-calendar" data-bookings="<%= @bookings_json %>"></div>
+<div class="container">
+  <div class="row">
+    <div class="text-warning">
+      <div id="bookings-calendar" data-bookings="<%= @bookings_json %>"></div>
+    </div>
+    <div class="col-xs-12 col-md-4 col-lg-4">
+        <div class="txt-form">
+          <h1>Create a Booking</h1>
+        </div>
+
+        <%= render 'bookings/form', home: @home, booking: @booking %>
+        <%= link_to "Edit this Home", edit_home_path(@home), class: "btn btn-outline-secondary" %>
+      </div>
+    </div>
+</div>
+
+<%= link_to "Edit this Home", edit_home_path(@home) %>
+
+<div class="notes">
+  <div class="comment-form">
+    <%= simple_form_for ([@home, @note]), html: { class: "note-form" } do |f| %>
+      <%= f.input :content, label: "Leave a comment:" %>
+      <%= f.submit 'Create Note', class: "btn btn-gradient"%>
+    <% end %>
+  </div>
+  <div class="comments-index">
+    <% @home.notes.each do |note| %>
+      <div class="note-cards">
+        <p> <strong><%= note.user.name %>:</strong> <%= note.content %></p>
+      </div>
+        <%= link_to 'Delete', note_path(note), method: :delete, class: "btn btn-danger" %>
+    <% end %>
   </div>
 </div>
-
-<div class="namer"> <h1> <%= @home.country %></h1> </div>
-<div class="butonis">
-    <button class="btn border">Check-in</button>
-    <button class="btn border"> Check-out</button>
-    <button class="btn border"> Guests</button>
-</div>
-
-<div class="txt-form">
-    <h1>Create a Booking</h1>
-</div>
-
-<%= render 'bookings/form', home: @home, booking: @booking %>
-
-<%= link_to "Edit this Home", edit_home_path(@home), class: "btn btn-outline-secondary" %>
-
-<% @home.notes.each do |note| %>
-  <div class="note-cards">
-    <p>note</p>
-  </div>
-<% end %>
-
-<%= simple_form_for ([@home, @note]) do |f| %>
-  <%= f.input :content %>
-  <%= f.submit %>
-<% end %>
