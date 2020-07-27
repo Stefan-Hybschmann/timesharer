@@ -4,6 +4,14 @@ class BookingsController < ApplicationController
   def index
     @bookings = policy_scope(Booking).includes(:user).where(user: current_user)
     @booking = edit
+
+    @homes = Home.geocoded
+    @markers = @homes.map do |home|
+      {
+        lat: home.latitude,
+        lng: home.longitude
+      }
+    end
   end
   def new
     @booking = Booking.new
