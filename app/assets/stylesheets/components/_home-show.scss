@@ -14,34 +14,93 @@
     margin-bottom: 20px;
 }
 
-.notes {
+
+.post-form {
+  margin: 0 auto;
+  width: 564px;
   display: flex;
-  margin: 0 auto;
-  width: 800px;
+  align-items: center;
   background-color: white;
-  border-radius: 4px;
-  padding-top: 8px;
+  border-radius: 15px;
+  height: 122px;
+  padding: 0 13px;
+  box-shadow: 0 0 1.4px black;
 }
 
-.note-cards {
-  width: 400px;
-  height: 50px;
-  background-color: white;
-  border-radius: 4px;
-  margin: 0 auto;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+.note_content {
+  flex-grow: 1 !important;
 }
 
-.note-cards p {
-  padding-top: 8px;
+#note_content {
+  width: 100%;
+  border-radius: 6px 0 0 6px;
 }
-.note-form {
-  width: 300px;
-  margin: 0 auto;
-  margin-right: 24px;
-  margin-left: 40px;
+
+.avatar-note {
+  margin-right: 21px;
+  height: 60px;
+  width: 60px;
+  &.postt{
+    margin: 0 7px 0 21px;
+  }
 }
+
+.grow-one {
+  flex-grow: 1 !important;
+}
+
+#new_note {
+  display: flex;
+  align-items: flex-end;
+  flex-grow: 1;
+}
+
 
 .calendar {
   color: #065143;
 }
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px solid gray;
+}
+
+.notess{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.actions {
+  display: flex;
+  justify-content: baseline;
+  justify-content: flex-end;
+  border-top: 0.5px solid gray;
+  padding-top: 7px;
+}
+
+.note-details{
+  flex-grow: 1;
+  padding: 0 15px;
+}
+
+.leave-note {
+  width: 150px;
+  margin: 10% auto 0px auto;
+}
+
+.note-post {
+  display: flex;
+  align-items: center;
+  width: 564px;
+  padding: 23px 8px;
+  border-radius: 5px;
+  background: white;
+}
+
+.note-btn {
+  height: 62px;
+  border-radius: 0 6px 6px 0 !important;
+}
+
