@@ -39,7 +39,7 @@
 <div class="container-of-cards">
   <div class="row">
     <div class="col-12 col-md-6 col-lg-6">
-      <h1>Your vacation homes:</h1>
+      <h1><strong>Your vacation homes:</strong></h1>
       <hr>
       <% current_user.homes.each do |home| %>
         <div class="home-cards">
@@ -48,11 +48,11 @@
             <%= cl_image_tag home.photo.key, crop: :fill %>
           </div>
           <div class="home-cards-body">
-            <h6> <%= home.home_name %></h6>
+            <h6><strong><%= home.home_name %></strong></h6>
             <hr class="home-cards-hr">
-            <p>Country: <%= home.country %></p>
-            <p>Address: <%= home.address %>, <%= home.city %></p>
-            <p>Fits: #<%= home.maximum_no_of_guest %> guests</p>
+            <p><i class="fas fa-globe"></i>Country: <%= home.country %></p>
+            <p><i class="fas fa-map-marker-alt"></i> Address: <%= home.address %>, <%= home.city %></p>
+            <p><i class="fas fa-users"></i>Up to <%= home.maximum_no_of_guest %> guests</p>
           </div>
         </div>
         <hr>
