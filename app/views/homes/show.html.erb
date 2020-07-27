@@ -50,25 +50,44 @@
 </div>
 
 <%= link_to "Edit this Home", edit_home_path(@home) %>
-
-<div class="notes">
-  <div class="comment-form">
-    <%= simple_form_for ([@home, @note]), html: { class: "note-form" } do |f| %>
-      <%= f.input :content, label: "Leave a comment:" %>
-      <%= f.submit 'Create Note', class: "btn btn-gradient"%>
-    <% end %>
-  </div>
-  <div class="comments-index">
-    <% @home.notes.each do |note| %>
-      <div class="note-cards">
-        <p> <strong><%= note.user.name %>:</strong> <%= note.content %></p>
-      </div>
-        <%= link_to 'Delete', note_path(note), method: :delete, class: "btn btn-danger" %>
-    <% end %>
-  </div>
+<div class="leave-note">
+  <h5>Leave a note</h5>
 </div>
+<div class="post-form mb-4">
+  <%= image_tag "https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595508571/TimeSharer/stefan_profile_z9orch.jpg", class: "avatar img avatar-note"%>
+  <%= simple_form_for ([@home, @note]), html: { class: "form-inline note-form " } do |f| %>
+    <div class="form-group grow-one">
+      <%= f.input :content, label: false, class: "inpt" %>
+      <%= f.submit 'Comment', class: "btn btn-gradient note-btn"%>
+    </div>
+    <% end %>
+</div>
+
+<div class="notess">
+  <% @home.notes.each do |note| %> 
+    <div class="note-post mt-3">
+      <%= image_tag "https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595508571/TimeSharer/stefan_profile_z9orch.jpg", class: "avatar avatar-note postt"%>
+      <div class="note-details">
+        <div class="title mb-4">
+          <div class="username"> <%= note.user.name %></div>
+          <div class="date"><%= note.created_at.strftime("%b %e, %l:%M %p") %></div>
+        </div>
+        <div class="content mb-3"><%= note.content %></div>
+        <div class="actions">
+          <%= link_to 'Edit', note_path(note), method: :delete, class: "btn btn-danger" %>
+          <%= link_to 'Delete', note_path(note), method: :delete, class: "btn btn-danger" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+  
 
 <div id="map"
      style="width: 100%; height: 600px;"
      data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
