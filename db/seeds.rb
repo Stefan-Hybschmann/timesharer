@@ -28,10 +28,22 @@ puts "All homes have been deleted"
 puts "All users have been deleted"
 
 puts "Creating new user seeds"
-User.create!(name: "Stefan Hybschmann", email: "stefan@stefan.com", password: '123456', phone_number: '+44 12345678')
-User.create!(name: "Billy", email: "billy@billy.com", password: '123456', phone_number: '+852 87654321')
-User.create!(name: "Jea", email: "jea@jea.com", password: '123456', phone_number: '12345678')
-User.create!(name: "Juljan", email: "juljan@juljan.com", password: '123456', phone_number: '987654321')
+stefan = User.create!(name: "Stefan Hybschmann", email: "stefan@stefan.com", password: '123456', phone_number: '+44 12345678')
+billy = User.create!(name: "Billy", email: "billy@billy.com", password: '123456', phone_number: '+852 87654321')
+jea = User.create!(name: "Jea", email: "jea@jea.com", password: '123456', phone_number: '12345678')
+juljan = User.create!(name: "Juljan", email: "juljan@juljan.com", password: '123456', phone_number: '987654321')
+
+prof_pic = URI.open('https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595508571/TimeSharer/stefan_profile_z9orch.jpg')
+stefan.photo.attach(io: prof_pic, filename: 'copenhagen.png', content_type: 'image/jpg')
+
+prof_pic1 = URI.open('https://image.shutterstock.com/z/stock-vector-gray-avatar-icon-design-photo-placeholder-icon-1274338147.jpg')
+billy.photo.attach(io: prof_pic1, filename: 'copenhagen.png', content_type: 'image/jpg')
+
+prof_pic2 = URI.open('https://image.shutterstock.com/z/stock-vector-gray-avatar-icon-design-photo-placeholder-icon-1274338147.jpg')
+jea.photo.attach(io: prof_pic2, filename: 'copenhagen.png', content_type: 'image/jpg')
+
+prof_pic3 = URI.open('https://image.shutterstock.com/z/stock-vector-gray-avatar-icon-design-photo-placeholder-icon-1274338147.jpg')
+juljan.photo.attach(io: prof_pic3, filename: 'copenhagen.png', content_type: 'image/jpg')
 
 
 puts "Creating new homes seeds"
