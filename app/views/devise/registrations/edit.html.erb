@@ -1,7 +1,7 @@
 
 <div class="container">
   <div class="card-product">
-    <img src="/images/person.jpg"/>
+    <div class="contact-avatar-1" style="background-image: url('<%= cl_image_path current_user.photo.key, crop: :fill %>')"></div>
         <div class="card-product-infos">
           <h2>Edit <%= resource_name.to_s.humanize %></h2>
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>

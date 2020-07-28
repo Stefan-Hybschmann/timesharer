@@ -28,12 +28,9 @@ class BookingsController < ApplicationController
     @home = Home.find(params[:home_id])
     @booking.status = "Confirmed"
     # For Ranking, DO NOT DELETE!
-    if @home.bigger_owners(current_user).empty?
+    if @home.ranking == 'first come first served' || @home.bigger_owners(current_user).empty?
       @booking.save
       redirect_to home_bookings_path, booking_confirmed: 'Your home was successfully booked. TimeSharer wish you a happy stay, and hope to see you again soon. Remember you can see all of your bookings under "Bookings".'
-      # else
-      #   render home_bookings_path
-      # end
     elsif @booking.valid?
       @booking.status = "Pending"
       bigger_owners = @home.bigger_owners(current_user)
