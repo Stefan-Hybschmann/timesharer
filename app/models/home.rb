@@ -9,11 +9,17 @@ class Home < ApplicationRecord
   validates :country, :address, :maximum_no_of_guest, :ranking, presence: true
   validates :maximum_no_of_guest, :no_of_bed, numericality: { greater_than_or_equal_to: 0 }
 
-  # For ranking by shares of ownerships, DO NOT DELETE
-  def bigger_owners(current_user)
-    current_user_ownership = ownerships.find do |ownership|
-      ownership.user == current_user
+  # For ranking by shares of ownerships (2)
+  def ownership_for(user)
+    ownership = ownerships.find do |o|
+      o.user == user
     end
+    return ownership
+  end
+
+  # For ranking by shares of ownerships
+  def bigger_owners(current_user)
+    current_user_ownership = ownership_for(current_user)
 
     bigger_ownerships = ownerships.select do |ownership|
       ownership.shares_of_ownership > current_user_ownership.shares_of_ownership
@@ -26,5 +32,4 @@ class Home < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   accepts_nested_attributes_for :bookings
-
 end
