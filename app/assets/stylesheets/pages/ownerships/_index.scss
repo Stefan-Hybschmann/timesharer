@@ -1,0 +1,52 @@
+.cards-and-image {
+  display: flex;
+}
+
+.title-and-user-cards h2 {
+  margin-top: 8px;
+  text-align: center;
+}
+
+.title-and-user-cards h2, p, fas {
+  color: #065143;
+}
+
+.user-cards {
+  display: flex;
+  width: 550px;
+  background-color: white;
+  border-radius: 4px;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+}
+
+.avatar-tester {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: 32px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.user-card-body p {
+  font-weight: 200;
+  opacity: 0.5;
+}
+
+.user-card-body h6 {
+  margin-left: 32px;
+}
+
+.users-home-img {
+  width: 550px;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 4px;
+  margin: 8px;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 10%;
+}

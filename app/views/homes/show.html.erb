@@ -81,20 +81,20 @@
 
 <div class="notess">
   <% @home.notes.each do |note| %>
-  <div class="note-post mt-3">
-    <%= image_tag "https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595508571/TimeSharer/stefan_profile_z9orch.jpg", class: "avatar avatar-note postt"%>
-    <div class="note-details">
-      <div class="title mb-4">
-        <div class="username"> <%= note.user.name %></div>
-        <div class="date"><%= note.created_at.strftime("%b %e, %l:%M %p") %></div>
-      </div>
-      <div class="content mb-3"><%= note.content %></div>
-      <div class="actions">
-        <%= link_to 'Edit', note_path(note), method: :delete, class: "btn btn-outline-info" %>
-        <%= link_to 'Delete', note_path(note), method: :delete, class: "btn btn-outline-secondary" %>
+    <div class="note-post mt-3">
+      <%= image_tag "https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595508571/TimeSharer/stefan_profile_z9orch.jpg", class: "avatar avatar-note postt"%>
+      <div class="note-details">
+        <div class="title mb-4">
+          <div class="username"> <%= note.user.name %></div>
+          <div class="date"><%= note.created_at.strftime("%b %e, %l:%M %p") %></div>
+        </div>
+        <div class="content mb-3"><%= note.content %></div>
+        <div class="actions">
+          <%= link_to 'Edit', note_path(note), method: :delete, class: "btn btn-outline-info" %>
+          <%= link_to 'Delete', note_path(note), method: :delete, class: "btn btn-outline-secondary" %>
+        </div>
       </div>
     </div>
-  </div>
   <% end %>
 </div>
 
