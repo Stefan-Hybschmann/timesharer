@@ -1,0 +1,68 @@
+<%# <form action="/examples/actions/confirmation.php" method="post">
+  <p class="hint-text">Fill in this form to create your account!</p>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Username" required="required">
+  </div>
+  <div class="form-group">
+    <input type="password" class="form-control" placeholder="Password" required="required">
+  </div>
+  <div class="form-group">
+    <input type="password" class="form-control" placeholder="Confirm Password" required="required">
+  </div>
+  <div class="form-group">
+    <label class="form-check-label">Add Profile Image</label>
+    <input type="file" class="form-control">
+  </div>
+  <div class="form-group">
+    <label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms &amp; Conditions</a></label>
+  </div>
+  <div class="form-group">
+    <input type="submit" class="btn btn-primary btn-block" value="Sign up">
+  </div>
+</form> %>
+
+<%= simple_form_for(:user, url: user_registration_path) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <div class="form-group">
+      <%= f.input :name,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "name" }%>
+    </div>
+    <div class="form-group">
+      <%= f.input :phone_number,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "phone_number" }%>
+    </div>
+    <div class="form-group">
+      <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" }%>
+    </div>
+    <div class="form-group">
+      <%= f.input :password,
+                  required: true,
+                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  input_html: { autocomplete: "new-password" } %>
+    </div>
+    <div class="form-group">
+      <%= f.input :password_confirmation,
+                  required: true,
+                  input_html: { autocomplete: "new-password" } %>
+    </div>
+    <div class="form-group">
+      <%= f.input :photo, as: :file %>
+    </div>
+    <div class="form-group">
+      <label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms &amp; Conditions</a></label>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Sign up", class: 'btn btn-primary btn-block' %>
+  </div>
+<% end %>
