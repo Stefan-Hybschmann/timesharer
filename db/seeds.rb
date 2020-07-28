@@ -34,10 +34,10 @@ jea = User.create!(name: "Jea", email: "jea@jea.com", password: '123456', phone_
 juljan = User.create!(name: "Juljan", email: "juljan@juljan.com", password: '123456', phone_number: '987654321')
 
 prof_pic = URI.open('https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595508571/TimeSharer/stefan_profile_z9orch.jpg')
-stefan.photo.attach(io: prof_pic, filename: 'copenhagen.png', content_type: 'image/jpg')
+stefan.photo.attach(io: prof_pic, filename: 'stefan.jpg', content_type: 'image/jpg')
 
-prof_pic1 = URI.open('https://image.shutterstock.com/z/stock-vector-gray-avatar-icon-design-photo-placeholder-icon-1274338147.jpg')
-billy.photo.attach(io: prof_pic1, filename: 'copenhagen.png', content_type: 'image/jpg')
+prof_pic1 = URI.open('https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595949687/TimeSharer/Billy_Leung_Square_g9srgt.jpg')
+billy.photo.attach(io: prof_pic1, filename: 'billy.jpg', content_type: 'image/jpg')
 
 prof_pic2 = URI.open('https://image.shutterstock.com/z/stock-vector-gray-avatar-icon-design-photo-placeholder-icon-1274338147.jpg')
 jea.photo.attach(io: prof_pic2, filename: 'copenhagen.png', content_type: 'image/jpg')
