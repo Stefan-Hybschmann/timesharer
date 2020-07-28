@@ -6,7 +6,7 @@ class Home < ApplicationRecord
 
   has_one_attached :photo
 
-  validates :country, :address, :maximum_no_of_guest, presence: true
+  validates :country, :address, :maximum_no_of_guest, :ranking, presence: true
   validates :maximum_no_of_guest, :no_of_bed, numericality: { greater_than_or_equal_to: 0 }
 
   # For ranking by shares of ownerships, DO NOT DELETE
