@@ -7,15 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
 
-puts "Deleting all users"
-puts "Deleting all ownerships"
-puts "Deleting all homes"
-puts "Deleting all bookings"
+puts "Deleting all notes"
+Note.delete_all
 
-Ownership.delete_all
+puts "Deleting all bookings"
 Booking.delete_all
-Home.delete_all
+
+puts "Deleting all ownerships"
+Ownership.delete_all
+
+puts "Deleting all users"
 User.delete_all
+
+puts "Deleting all homes"
+Home.delete_all
 
 puts "All ownerships have been deleted"
 puts "All bookings have been deleted"
