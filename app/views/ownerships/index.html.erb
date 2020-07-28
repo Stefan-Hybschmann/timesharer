@@ -1,0 +1,35 @@
+ <!-- @ownerships.each { |own| p own.user.name } -->
+<div class="container">
+  <div class="cards-and-image">
+    <div class="title-and-user-cards">
+      <h2>Owners of: <strong><%= @home.home_name %></strong></h2>
+      <hr>
+      <% @ownerships.each do |own| %>
+        <div class="user-cards">
+          <div class="user-card-avatar">
+            <%#= own.user.avatar %>
+            <%= cl_image_tag @home.photo.key, class: "avatar-tester", crop: :fill %>
+          </div>
+          <div class="user-card-body">
+            <h6><strong><%= own.user.name %></strong></h6>
+            <hr class="home-cards-hr">
+            <p><i class="fas fa-percent"></i> Owns: <%= own.shares_of_ownership %> %</p>
+            <p><i class="fas fa-phone-alt"></i> <%= own.user.phone_number %></p>
+            <% if own.is_admin? %>
+              <p><i class="fas fa-user-cog"></i>Administrator: Yes</p>
+            <% else %>
+              <p><i class="fas fa-user-cog"></i>Administrator: No</p>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div>
+      <%= cl_image_tag @home.photo.key, class: "users-home-img", crop: :fill %>
+    </div>
+  </div>
+</div>
+
+
+
+

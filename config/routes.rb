@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :homes, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :bookings, only: [:index, :new, :create]
     resources :notes, only: [:index, :new, :create]
+    resources :ownerships, only: [:index]
   end
   resources :bookings, only: [:index, :edit, :update, :destroy]
   resources :users, only: [:show]
