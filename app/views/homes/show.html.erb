@@ -56,7 +56,9 @@
             <p><i class="fas fa-map-marker-alt"></i> <%= @home.address %>, <%= @home.city %></p>
             <p><i class="fas fa-users"></i>Up to <%= @home.maximum_no_of_guest %> guests</p>
             <p><i class="fas fa-bed"></i><%= @home.no_of_bed %> beds available</p>
-            <p><i class="fas fa-user-circle"></i>Owners: <%= current_user.name %></p>
+            <%= link_to home_ownerships_path(@home), class: "edit-icon" do %>
+              <i class="fas fa-user-circle"></i>See owners
+            <% end %>
           </div>
         </div>
       </div>
