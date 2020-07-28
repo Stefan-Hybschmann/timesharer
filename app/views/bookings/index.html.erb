@@ -14,6 +14,7 @@
           <th><i class="fas fa-plane-departure"></i>Check out</th>
           <th><i class="fas fa-moon"></i></i>Nights in total</th>
           <th><i class="fas fa-users"></i>No. of guests</th>
+          <th><i class="fas fa-question-circle"></i>Status</th>
         </tr>
       </thead>
       <tbody>
@@ -24,6 +25,7 @@
             <td><%= booking.end_date %></td>
             <td><%= (booking.end_date - booking.start_date).to_i %></td>
             <td><%= booking.no_of_guest %></td>
+            <td><%= booking.status %></td>
             <td>
               <%= link_to 'View', home_path(booking.home), class: 'btn btn-info' %>
               <%= link_to 'Edit', edit_booking_path(booking), class: 'btn btn-outline-info' %>

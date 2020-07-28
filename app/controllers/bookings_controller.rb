@@ -22,27 +22,42 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
+    @home = Home.find(params[:home_id])
     @booking.home_id = params[:home_id]
     authorize @booking
     @home = Home.find(params[:home_id])
+    @booking.status = "Confirmed"
     # For Ranking, DO NOT DELETE!
-    # if @home.bigger_owners.empty?
-    if @booking.save
-      redirect_to homes_path, booking_confirmed: 'Your home was successfully booked. TimeSharer wish you a happy stay, and hope to see you again soon. Remember you can see all of your bookings under "Bookings".'
-    else
-      render home_bookings_path
-    end
-    # elsif @booking.valid?
-      # bigger_owners = @home.bigger_owners(current_user)
+    if @home.bigger_owners(current_user).empty?
+      @booking.save
+      redirect_to home_bookings_path, booking_confirmed: 'Your home was successfully booked. TimeSharer wish you a happy stay, and hope to see you again soon. Remember you can see all of your bookings under "Bookings".'
+      # else
+      #   render home_bookings_path
+      # end
+    elsif @booking.valid?
+      @booking.status = "Pending"
+      bigger_owners = @home.bigger_owners(current_user)
       # iterate the bigger_owners and send them an email or message - to do
-      # redirect_to confirmation_path
-    # else
-      # render :new
-    # end
-
+      bigger_owner = bigger_owners.each do |owner|
+        p owner.name
+        p owner.email
+        p owner.phone_number
+      end
+      @booking.save
+      redirect_to pending_home_booking_path(@home, @booking)
+    else
+      render :new
+    end
   end
 
-  def edit; end
+  def pending
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @home = Home.find(params[:home_id])
+  end
+
+  def edit
+  end
 
   def update
     if @booking.update(booking_params)
@@ -57,6 +72,7 @@ class BookingsController < ApplicationController
     @booking.destroy
     redirect_to home_bookings_path(home), notice: 'Your booking was successfully deleted!'
   end
+
 
   private
 

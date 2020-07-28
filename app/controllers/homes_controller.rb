@@ -71,7 +71,7 @@ class HomesController < ApplicationController
   private
 
   def home_params
-    params.require(:home).permit(:country, :city, :address, :maximum_no_of_guest, :no_of_bed, :home_name)
+    params.require(:home).permit(:country, :city, :address, :maximum_no_of_guest, :no_of_bed, :home_name, :ranking)
   end
 
   def create_ownership
