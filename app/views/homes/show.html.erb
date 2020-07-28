@@ -43,20 +43,24 @@
       <div id="bookings-calendar" data-bookings="<%= @bookings_json %>"></div>
     </div>
     <div class="col-xs-12 col-md-4 col-lg-4">
-      <div class="home-show-cards">
-        <div class="home-show-cards-image">
-          <%= cl_image_tag @home.photo.key, crop: :fill %>
-        </div>
-        <div class="home-show-cards-body">
-          <h6><strong><%= @home.home_name %></strong></h6>
-          <p><i class="fas fa-edit"></i><%= link_to "Edit home", edit_home_path(@home) %></p>
-          <hr class="home-cards-hr">
-          <p><i class="fas fa-globe"></i><%= @home.country %></p>
-          <p><i class="fas fa-map-marker-alt"></i> <%= @home.address %>, <%= @home.city %></p>
-          <p><i class="fas fa-users"></i>Up to <%= @home.maximum_no_of_guest %> guests</p>
-          <p><i class="fas fa-bed"></i><%= @home.no_of_bed %> beds available</p>
-          <p><i class="fas fa-user-circle"></i>Owners: <%= current_user.name %></p>
-          <p><i class="fas fa-sort-amount-down"></i>Priority: <%= @home.ranking %></p>
+      <div>
+        <div class="home-show-cards">
+          <div class="home-show-cards-image">
+            <%= cl_image_tag @home.photo.key, crop: :fill %>
+          </div>
+          <div class="home-show-cards-body">
+            <h6><strong><%= @home.home_name %></strong></h6>
+            <p><i class="fas fa-edit"></i><%= link_to "Edit home", edit_home_path(@home) %></p>
+            <hr class="home-cards-hr">
+            <p><i class="fas fa-globe"></i><%= @home.country %></p>
+            <p><i class="fas fa-map-marker-alt"></i> <%= @home.address %>, <%= @home.city %></p>
+            <p><i class="fas fa-users"></i>Up to <%= @home.maximum_no_of_guest %> guests</p>
+            <p><i class="fas fa-bed"></i><%= @home.no_of_bed %> beds available</p>
+            <p><i class="fas fa-sort-amount-down"></i>Priority: <%= @home.ranking %></p>
+            <%= link_to home_ownerships_path(@home), class: "edit-icon" do %>
+              <i class="fas fa-user-circle"></i>See owners
+            <% end %>
+          </div>
         </div>
       </div>
       <%= render 'bookings/form', home: @home, booking: @booking %>
