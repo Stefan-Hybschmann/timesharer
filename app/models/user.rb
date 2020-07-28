@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :notes
   has_many :ownerships, dependent: :destroy
   has_many :homes, through: :ownerships
+  has_one_attached :photo
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
