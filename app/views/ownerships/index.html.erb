@@ -1,9 +1,7 @@
- <!-- @ownerships.each { |own| p own.user.name } -->
 <div class="container">
   <div class="cards-and-image">
     <div class="title-and-user-cards">
       <h2>Owners of: <strong><%= @home.home_name %></strong></h2>
-      <hr>
       <% @ownerships.each do |own| %>
         <div class="user-cards">
           <div class="user-card-avatar">
@@ -19,6 +17,11 @@
               <p><i class="fas fa-user-cog"></i>Administrator: Yes</p>
             <% else %>
               <p><i class="fas fa-user-cog"></i>Administrator: No</p>
+            <% end %>
+            <% if policy(own).edit? %>
+              <%= link_to edit_ownership_path(own), class: "edit-icon" do %>
+                <i class="fas fa-edit"></i>Edit
+              <% end %>
             <% end %>
           </div>
         </div>

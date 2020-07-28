@@ -1,4 +1,4 @@
-<div class="container-fluid" style="margin-top: 80px; margin-bottom:15px">
+<!-- <div class="container-fluid" style="margin-top: 80px; margin-bottom:15px">
   <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="9000">
     <div class="carousel-inner row w-10 mxauto" role="listbox">
       <div class="carousel-item1 one col-md-4 active">
@@ -29,13 +29,13 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-</div>
+</div> -->
 
-<!-- <div class="image-banner">
+<div class="image-banner">
   <img class="banner-image-left" src="https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595910044/TimeSharer/copenhagen_interior_5_c0sfot.jpg" alt="vacation home">
   <img class="banner-image-main" src="https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595909712/TimeSharer/copenhagen_interior_4_e091dp.jpg" alt="vacation home">
   <img class="banner-image-right" src="https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595908896/TimeSharer/copenhagen_interior_1_zhn0mt.png">
-</div> -->
+</div>
 
 <div class="container">
   <div class="d-flex justify-content-center align-items-center">
@@ -57,7 +57,9 @@
             <p><i class="fas fa-map-marker-alt"></i> <%= @home.address %>, <%= @home.city %></p>
             <p><i class="fas fa-users"></i>Up to <%= @home.maximum_no_of_guest %> guests</p>
             <p><i class="fas fa-bed"></i><%= @home.no_of_bed %> beds available</p>
-            <p><i class="fas fa-user-circle"></i>Owners: <%= current_user.name %></p>
+            <%= link_to home_ownerships_path(@home), class: "edit-icon" do %>
+              <i class="fas fa-user-circle"></i>See owners
+            <% end %>
           </div>
         </div>
       </div>
