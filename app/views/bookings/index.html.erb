@@ -1,7 +1,7 @@
 <div class="image-banner">
-  <img class="banner-image" src="https://images.unsplash.com/photo-1574529499335-2e28af85854d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="vacation home">
-  <img class="banner-image" src="https://images.unsplash.com/photo-1564527424873-ced422096181?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="vacation home">
-  <img class="banner-image" src="https://images.unsplash.com/photo-1576109324778-3ec50ebdf7db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="vacation home">
+  <img class="banner-image-left" src="https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595910044/TimeSharer/copenhagen_interior_5_c0sfot.jpg" alt="vacation home">
+  <img class="banner-image-main" src="https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595909712/TimeSharer/copenhagen_interior_4_e091dp.jpg" alt="vacation home">
+  <img class="banner-image-right" src="https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595908896/TimeSharer/copenhagen_interior_1_zhn0mt.png">
 </div>
 <div class="my-bookings">
   <h1><strong>My Bookings</strong></h1>
@@ -35,7 +35,7 @@
     </table>
   </div>
   <div id="map"
-     style="width: 100%; height: 600px; margin-top: 40px;"
+     style="width: 90%; height: 600px; margin: 0 auto; border-radius: 6px;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
