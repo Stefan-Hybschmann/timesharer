@@ -43,44 +43,41 @@
       <div id="bookings-calendar" data-bookings="<%= @bookings_json %>"></div>
     </div>
     <div class="col-xs-12 col-md-4 col-lg-4">
-      <div>
-        <div class="home-show-cards">
-          <div class="home-show-cards-image">
-            <%= cl_image_tag @home.photo.key, crop: :fill %>
-          </div>
-          <div class="home-show-cards-body">
-            <h6><strong><%= @home.home_name %></strong></h6>
-            <p><i class="fas fa-edit"></i><%= link_to "Edit home", edit_home_path(@home) %></p>
-            <hr class="home-cards-hr">
-            <p><i class="fas fa-globe"></i><%= @home.country %></p>
-            <p><i class="fas fa-map-marker-alt"></i> <%= @home.address %>, <%= @home.city %></p>
-            <p><i class="fas fa-users"></i>Up to <%= @home.maximum_no_of_guest %> guests</p>
-            <p><i class="fas fa-bed"></i><%= @home.no_of_bed %> beds available</p>
-            <p><i class="fas fa-user-circle"></i>Owners: <%= current_user.name %></p>
-          </div>
+      <div class="home-show-cards">
+        <div class="home-show-cards-image">
+          <%= cl_image_tag @home.photo.key, crop: :fill %>
+        </div>
+        <div class="home-show-cards-body">
+          <h6><strong><%= @home.home_name %></strong></h6>
+          <p><i class="fas fa-edit"></i><%= link_to "Edit home", edit_home_path(@home) %></p>
+          <hr class="home-cards-hr">
+          <p><i class="fas fa-globe"></i><%= @home.country %></p>
+          <p><i class="fas fa-map-marker-alt"></i> <%= @home.address %>, <%= @home.city %></p>
+          <p><i class="fas fa-users"></i>Up to <%= @home.maximum_no_of_guest %> guests</p>
+          <p><i class="fas fa-bed"></i><%= @home.no_of_bed %> beds available</p>
+          <p><i class="fas fa-user-circle"></i>Owners: <%= current_user.name %></p>
+          <p><i class="fas fa-sort-amount-down"></i>Priority: <%= @home.ranking %></p>
         </div>
       </div>
-      <br>
       <%= render 'bookings/form', home: @home, booking: @booking %>
     </div>
   </div>
 </div>
-
-<div class="leave-note">
-  <h5>Leave a note</h5>
-</div>
-<div class="post-form mb-4">
-  <%= image_tag "https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595508571/TimeSharer/stefan_profile_z9orch.jpg", class: "avatar img avatar-note"%>
-  <%= simple_form_for ([@home, @note]), html: { class: "form-inline note-form " } do |f| %>
-  <div class="form-group grow-one">
-    <%= f.input :content, label: false, class: "inpt" %>
-    <%= f.submit 'Comment', class: "btn btn-info note-btn"%>
+  <div class="leave-note">
+    <h5>Leave a note</h5>
   </div>
-  <% end %>
-</div>
+  <div class="post-form mb-4">
+    <%= image_tag "https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595508571/TimeSharer/stefan_profile_z9orch.jpg", class: "avatar img avatar-note"%>
+    <%= simple_form_for ([@home, @note]), html: { class: "form-inline note-form " } do |f| %>
+    <div class="form-group grow-one">
+      <%= f.input :content, label: false, class: "inpt" %>
+      <%= f.submit 'Comment', class: "btn btn-info note-btn"%>
+    </div>
+    <% end %>
+  </div>
 
-<div class="notess">
-  <% @home.notes.each do |note| %>
+  <div class="notess">
+    <% @home.notes.each do |note| %>
     <div class="note-post mt-3">
       <%= image_tag "https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595508571/TimeSharer/stefan_profile_z9orch.jpg", class: "avatar avatar-note postt"%>
       <div class="note-details">
@@ -95,11 +92,11 @@
         </div>
       </div>
     </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 
-<div id="map"
-style="width: 50%; height: 600px; border-radius: 4px; margin-top: 10px;"
-data-markers="<%= @markers.to_json %>"
-data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div id="map"
+  style="width: 50%; height: 600px; border-radius: 4px; margin-top: 10px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
