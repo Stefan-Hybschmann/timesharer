@@ -3,10 +3,13 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :homes, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
-    resources :bookings, only: [:index, :new, :create] do
+    resources :bookings, only: [:new, :create] do
       member do
         get '/pending', to: 'bookings#pending', as: :pending
       end
+    end
+    member do
+      get '/bookings', to: 'bookings#home_bookings', as: :home_bookings
     end
     resources :notes, only: [:index, :new, :create]
     resources :ownerships, only: [:index]

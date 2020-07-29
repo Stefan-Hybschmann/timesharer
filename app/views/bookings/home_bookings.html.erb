@@ -1,0 +1,46 @@
+<div class="image-banner">
+  <img class="banner-image-left" src="https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595910044/TimeSharer/copenhagen_interior_5_c0sfot.jpg" alt="vacation home">
+  <img class="banner-image-main" src="https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595909712/TimeSharer/copenhagen_interior_4_e091dp.jpg" alt="vacation home">
+  <img class="banner-image-right" src="https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595908896/TimeSharer/copenhagen_interior_1_zhn0mt.png">
+</div>
+
+<div class="my-bookings">
+  <h1><strong>Bookings for <%= @home.home_name %></strong></h1>
+  <div class="bookings-table">
+    <table class="table">
+      <thead>
+        <tr>
+          <th><i class="fas fa-user"></i>User</th>
+          <th><i class="fas fa-plane-arrival"></i>Check in</th>
+          <th><i class="fas fa-plane-departure"></i>Check out</th>
+          <th><i class="fas fa-moon"></i></i>Nights in total</th>
+          <th><i class="fas fa-users"></i>No. of guests</th>
+          <th><i class="fas fa-question-circle"></i>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @bookings.each do |booking| %>
+          <tr>
+            <td><%= booking.user.name %></td>
+            <td><%= booking.start_date %></td>
+            <td><%= booking.end_date %></td>
+            <td><%= (booking.end_date - booking.start_date).to_i %></td>
+            <td><%= booking.no_of_guest %></td>
+            <td>
+              <%= booking.status %>
+              <br>
+              <% if booking.ownership.greater_shares_of_ownership?(current_user) && booking.status == 'Pending' %>
+                <a href="#" class="text-info">approve</a>
+              <% end %>
+             </td>
+            <td>
+              <%= link_to 'View', home_path(booking.home), class: 'btn btn-info' %>
+              <%= link_to 'Edit', edit_booking_path(booking), class: 'btn btn-outline-info' %>
+              <%= link_to 'Delete', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-outline-secondary" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
