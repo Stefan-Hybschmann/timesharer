@@ -15,6 +15,13 @@ class BookingsController < ApplicationController
       }
     end
   end
+
+  def home_bookings
+    @home = Home.find(params[:id])
+    authorize @home, :show?
+    @bookings = @home.bookings
+  end
+
   def new
     @booking = Booking.new
   end
@@ -69,7 +76,6 @@ class BookingsController < ApplicationController
     @booking.destroy
     redirect_to home_bookings_path(home), notice: 'Your booking was successfully deleted!'
   end
-
 
   private
 

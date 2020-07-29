@@ -71,10 +71,14 @@
 
 <div class="text-center pt-10">
   <div class="d-flex justify-content-center align-items-center">
+    <div class="pr-20">
+      <%= link_to 'Show all bookings', home_bookings_home_path, class: "btn btn-outline-info" %>
+    </div>
+
     <div class="">
       <!-- Button trigger modal -->
       <div class="pr-10">
-        <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#booking">Make a booking<a>
+        <a href="#" class="btn btn-info" data-toggle="modal" data-target="#booking">Make a booking<a>
       </div>
 
       <!-- Modal -->
@@ -103,7 +107,7 @@
     <div class="">
       <!-- Button trigger modal -->
       <div class="pl-10">
-        <a href="#" class="btn btn-info" data-toggle="modal" data-target="#leave">Leave a note<a>
+        <a href="#" class="btn btn-outline-secondary" data-toggle="modal" data-target="#leave">Leave a note<a>
       </div>
 
       <!-- Modal -->
@@ -150,7 +154,9 @@
         </div>
         <div class="content mb-3"><%= note.content %></div>
         <div class="actions">
+          <div class="pr-10">
           <%= link_to 'Edit', note_path(note), method: :delete, class: "btn btn-outline-info" %>
+          </div>
           <%= link_to 'Delete', note_path(note), method: :delete, class: "btn btn-outline-secondary" %>
         </div>
       </div>

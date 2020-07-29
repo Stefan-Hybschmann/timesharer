@@ -66,12 +66,12 @@ dark_forest.save
 cielo_y_mar.save
 
 puts "Creating new bookings seeds"
-Booking.create!(user: User.first, home: Home.first, start_date: "2020-07-29", end_date: "2020-08-05", no_of_guest: 6)
+Booking.create!(user: User.first, home: Home.first, start_date: "2020-08-01", end_date: "2020-08-05", no_of_guest: 6)
 Booking.create!(user: User.first, home: Home.first, start_date: "2021-06-30", end_date: "2021-07-28", no_of_guest: 4)
 Booking.create!(user: User.second, home: Home.first, start_date: "2020-08-10", end_date: "2020-08-18", no_of_guest: 4)
-Booking.create!(user: User.last, home: Home.first, start_date: "2020-08-22", end_date: "2020-09-04", no_of_guest: 4)
+Booking.create!(user: User.last, home: Home.first, start_date: "2020-08-22", end_date: "2020-09-04", no_of_guest: 4, status: "Pending")
 Booking.create!(user: User.second, home: Home.second, start_date: "2020-09-12", end_date: "2020-10-04", no_of_guest: 3)
-Booking.create!(user: User.third, home: Home.second, start_date: "2020-07-31", end_date: "2020-08-06", no_of_guest: 6)
+Booking.create!(user: User.third, home: Home.second, start_date: "2020-07-31", end_date: "2020-08-06", no_of_guest: 6, status: "Pending")
 Booking.create!(user: User.first, home: Home.third, start_date: "2020-09-05", end_date: "2020-09-11", no_of_guest: 2)
 Booking.create!(user: User.last, home: Home.third, start_date: "2020-10-10", end_date: "2020-10-11", no_of_guest: 4)
 
