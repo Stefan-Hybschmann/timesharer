@@ -5,8 +5,8 @@
       <% @ownerships.each do |own| %>
         <div class="user-cards">
           <div class="user-card-avatar">
-            <%#= own.users.photo.key, class: "user-card-avatar" %>
-            <%= cl_image_tag @home.photo.key, class: "avatar-tester", crop: :fill %>
+            <%= cl_image_tag own.user.photo.key, class: "avatar-tester", crop: :fill %>
+            <%#= cl_image_tag @home.photo.key, class: "avatar-tester", crop: :fill %>
           </div>
           <div class="user-card-body">
             <h6><strong><%= own.user.name %></strong></h6>
