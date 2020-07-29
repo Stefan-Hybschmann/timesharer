@@ -23,7 +23,7 @@
     <%= f.input :ranking, :collection => %w[first\ come\ first\ served shares\ of\ ownerships], include_blank: false, include_hidden: false, prompt: "Select criteria" %>
     <br>
 
-    <%= f.input :photo %>
+    <%= f.input :photo, as: :file, required: true %>
     <br>
 
     <%= f.submit 'Create Home', class: "btn btn-ghost" %>

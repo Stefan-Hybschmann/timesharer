@@ -48,9 +48,9 @@ juljan.photo.attach(io: prof_pic3, filename: 'copenhagen.png', content_type: 'im
 
 puts "Creating new homes seeds"
 
-little_mermaid = Home.create!(home_name: 'The Little Mermaid', country: 'Denmark', city: 'Copenhagen', address: 'Nyhavn 45, 1051', maximum_no_of_guest: 10, no_of_bed: 10, ranking: 'shares of ownership')
-dark_forest = Home.create!(home_name: 'The Dark Forest', country: 'Germany', city: 'Berlin', address: 'Colomierstraße 3, 14109', maximum_no_of_guest: 8, no_of_bed: 8, ranking: 'shares of ownerships')
-cielo_y_mar = Home.create!(home_name: 'Cielo y Mar', country: 'Spain', city: 'Barcelona', address: 'Passeig de Garcia Faria, 49, 08019', maximum_no_of_guest: 12, no_of_bed: 10, ranking: 'first come first served')
+little_mermaid = Home.new(home_name: 'The Little Mermaid', country: 'Denmark', city: 'Copenhagen', address: 'Nyhavn 45, 1051', maximum_no_of_guest: 10, no_of_bed: 10, ranking: 'shares of ownership')
+dark_forest = Home.new(home_name: 'The Dark Forest', country: 'Germany', city: 'Berlin', address: 'Colomierstraße 3, 14109', maximum_no_of_guest: 8, no_of_bed: 8, ranking: 'shares of ownerships')
+cielo_y_mar = Home.new(home_name: 'Cielo y Mar', country: 'Spain', city: 'Barcelona', address: 'Passeig de Garcia Faria, 49, 08019', maximum_no_of_guest: 12, no_of_bed: 10, ranking: 'first come first served')
 
 file = URI.open('https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595590617/TimeSharer/copenhagen_f6pbtg.jpg')
 little_mermaid.photo.attach(io: file, filename: 'copenhagen.png', content_type: 'image/jpg')
@@ -60,6 +60,10 @@ dark_forest.photo.attach(io: file, filename: 'switzerland.png', content_type: 'i
 
 file = URI.open('https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595590586/TimeSharer/spain_czztre.jpg')
 cielo_y_mar.photo.attach(io: file, filename: 'barcelona.png', content_type: 'image/jpg')
+
+little_mermaid.save
+dark_forest.save
+cielo_y_mar.save
 
 puts "Creating new bookings seeds"
 Booking.create!(user: User.first, home: Home.first, start_date: "2020-07-29", end_date: "2020-08-05", no_of_guest: 6)
