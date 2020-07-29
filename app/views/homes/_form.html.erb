@@ -1,5 +1,5 @@
 <div class="add-home-form">
-  <h1>Create Your New Home</h1>
+  <h1><strong>Create Your New Home</strong></h1>
   <br>
   <%= simple_form_for(@home) do |f| %>
     <%= f.input :home_name %>
@@ -7,7 +7,6 @@
     <%= f.input :city %>
     <%= f.input :address %>
     <%= f.input :maximum_no_of_guest %>
-    <%= f.input :no_of_bed, :collection => %w[1 2 3 4 5 6+], include_blank: false, include_hidden: false, prompt: "Select no. of beds" %>
     <!-- Add Javascript for the below form to show up when no.of.bed is more than 6 -->
     <div class="form-group">
       <label for="beds">No. of beds</label>
@@ -27,7 +26,6 @@
     <br>
 
     <%= f.submit 'Create Home', class: "btn btn-ghost" %>
-    <br>
     <br>
     <br>
   <% end %>
