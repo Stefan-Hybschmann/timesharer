@@ -57,6 +57,7 @@
             <p><i class="fas fa-map-marker-alt"></i> <%= @home.address %>, <%= @home.city %></p>
             <p><i class="fas fa-users"></i>Up to <%= @home.maximum_no_of_guest %> guests</p>
             <p><i class="fas fa-bed"></i><%= @home.no_of_bed %> beds available</p>
+            <p><i class="fas fa-sort-amount-down"></i>Priority: <%= @home.ranking %></p>
             <%= link_to home_ownerships_path(@home), class: "edit-icon" do %>
               <i class="fas fa-user-circle"></i>See owners
             <% end %>
@@ -138,8 +139,8 @@
   </div>
 </div>
 
-<div class="notess">
-  <% @home.notes.each do |note| %>
+  <div class="notess">
+    <% @home.notes.each do |note| %>
     <div class="note-post mt-3">
       <%= image_tag "https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595508571/TimeSharer/stefan_profile_z9orch.jpg", class: "avatar avatar-note postt"%>
       <div class="note-details">
@@ -154,8 +155,8 @@
         </div>
       </div>
     </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 
 <div class="container pb-10" style="width: 100%;">
   <div id="map"
