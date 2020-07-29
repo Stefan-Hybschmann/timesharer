@@ -74,6 +74,17 @@ class HomesController < ApplicationController
     params.require(:home).permit(:country, :city, :address, :maximum_no_of_guest, :no_of_bed, :home_name, :ranking, :photo)
   end
 
+  def event_color(user)
+    color = 'lightblue'
+    case user.name
+    when 'Stefan Hybschmann' then color = ''
+    when 'Billy' then color = 'orange'
+    when 'Juljan' then color = '#ffc65a'
+    when 'Jea' then color = '#080357'
+    end
+    return color
+  end
+
   def create_ownership
     @ownership = Ownership.new
     @ownership.user = current_user
@@ -88,7 +99,8 @@ class HomesController < ApplicationController
       {
         title: booking.user.name,
         start: booking.start_date,
-        end: booking.end_date
+        end: booking.end_date,
+        color: event_color(booking.user)
       }
     end
     hashes.to_json
