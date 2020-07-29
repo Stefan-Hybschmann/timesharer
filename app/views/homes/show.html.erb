@@ -116,9 +116,6 @@
 
 <div class="notess">
   <% @home.notes.each do |note| %>
-
-
-
     <div class="note-post mt-3">
       <%= image_tag "https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595508571/TimeSharer/stefan_profile_z9orch.jpg", class: "avatar avatar-note postt"%>
       <div class="note-details">
@@ -137,15 +134,12 @@
         <hr class="note-hr">
         <div class="actions">
           <div class="pr-10">
-          <%= link_to 'Edit', note_path(note), method: :delete, class: "btn btn-outline-info" %>
+          <%= link_to 'Edit', note_path(note), method: :delete, class: "note-button btn btn-outline-info" %>
           </div>
-          <%= link_to 'Delete', note_path(note), method: :delete, class: "btn btn-outline-secondary" %>
+          <%= link_to 'Delete', note_path(note), method: :delete, class: "note-button btn btn-outline-secondary" %>
         </div>
       </div>
     </div>
-
-
-
   <% end %>
 </div>
 
