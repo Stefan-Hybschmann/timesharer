@@ -1,8 +1,8 @@
 class HomesController < ApplicationController
   def index
-    @homes = policy_scope(Home).joins(:ownerships, :users).where("ownerships.user_id = #{current_user.id}")
-
     @homes = Home.geocoded
+    @homes = policy_scope(Home).joins(:ownerships, :users).where("ownerships.user_id = #{current_user.id}").distinct
+
     @markers = @homes.map do |home|
       {
         lat: home.latitude,
