@@ -26,21 +26,25 @@
             <td><%= booking.end_date %></td>
             <td><%= (booking.end_date - booking.start_date).to_i %></td>
             <td><%= booking.no_of_guest %></td>
+            <td><%= booking.status %></td>
             <td>
-              <%= booking.status %>
-              <br>
               <% if booking.ownership.greater_shares_of_ownership?(current_user) && booking.status == 'Pending' %>
-                <a href="#" class="text-info">approve</a>
+                <!-- <a href="#" class="text-info">approve</a> -->
+                <!-- booking.status = 'Confirmed' -->
+                <%= link_to 'Approve', home_path(booking.home), data: { confirm: 'Approve booking?'}, class: 'btn btn-info' %>
+                <!-- booking.status = 'Rejected' -->
+                <%= link_to 'Reject', home_path(booking.home), data: { confirm: 'Are you sure to reject?'}, class: "btn btn-outline-secondary" %>
               <% end %>
-             </td>
-            <td>
-              <%= link_to 'View', home_path(booking.home), class: 'btn btn-info' %>
-              <%= link_to 'Edit', edit_booking_path(booking), class: 'btn btn-outline-info' %>
-              <%= link_to 'Delete', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-outline-secondary" %>
             </td>
           </tr>
         <% end %>
       </tbody>
     </table>
   </div>
+  <br>
+  <div class="text-center">
+    <%= link_to 'Return to Overview', home_path(@home), class: 'btn btn-info' %>
+  </div>
+  <br>
+  <br>
 </div>

@@ -48,14 +48,14 @@ juljan.photo.attach(io: prof_pic3, filename: 'copenhagen.png', content_type: 'im
 
 puts "Creating new homes seeds"
 
-little_mermaid = Home.new(home_name: 'The Little Mermaid', country: 'Denmark', city: 'Copenhagen', address: 'Nyhavn 45, 1051', maximum_no_of_guest: 10, no_of_bed: 10, ranking: 'shares of ownership')
+little_mermaid = Home.new(home_name: 'The Little Mermaid', country: 'Denmark', city: 'Copenhagen', address: 'Nyhavn 45, 1051', maximum_no_of_guest: 7, no_of_bed: 6, ranking: 'shares of ownership')
 dark_forest = Home.new(home_name: 'The Dark Forest', country: 'Germany', city: 'Berlin', address: 'Colomierstraße 3, 14109', maximum_no_of_guest: 8, no_of_bed: 8, ranking: 'shares of ownerships')
-cielo_y_mar = Home.new(home_name: 'Cielo y Mar', country: 'Spain', city: 'Barcelona', address: 'Passeig de Garcia Faria, 49, 08019', maximum_no_of_guest: 12, no_of_bed: 10, ranking: 'first come first served')
+cielo_y_mar = Home.new(home_name: 'Cielo y Mar', country: 'Spain', city: 'Barcelona', address: 'Passeig de Garcia Faria, 49, 08019', maximum_no_of_guest: 10, no_of_bed: 10, ranking: 'first come first served')
 
 file = URI.open('https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595590617/TimeSharer/copenhagen_f6pbtg.jpg')
 little_mermaid.photo.attach(io: file, filename: 'copenhagen.png', content_type: 'image/jpg')
 
-file = URI.open('https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595594152/TimeSharer/switzerland_ydnzla.jpg')
+file = URI.open('https://res.cloudinary.com/dkdlmrgaf/image/upload/v1596037673/TimeSharer/Berlin_2_hkw70k.jpg')
 dark_forest.photo.attach(io: file, filename: 'switzerland.png', content_type: 'image/jpg')
 
 file = URI.open('https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595590586/TimeSharer/spain_czztre.jpg')
@@ -67,20 +67,24 @@ cielo_y_mar.save
 
 puts "Creating new bookings seeds"
 Booking.create!(user: User.first, home: Home.first, start_date: "2020-08-01", end_date: "2020-08-05", no_of_guest: 6)
-Booking.create!(user: User.first, home: Home.first, start_date: "2021-06-30", end_date: "2021-07-14", no_of_guest: 4)
-Booking.create!(user: User.first, home: Home.first, start_date: "2020-09-22", end_date: "2020-09-27", no_of_guest: 2)
 Booking.create!(user: User.second, home: Home.first, start_date: "2020-08-10", end_date: "2020-08-18", no_of_guest: 4)
-Booking.create!(user: User.second, home: Home.first, start_date: "2020-10-28", end_date: "2020-11-03", no_of_guest: 2, status: "Pending")
-Booking.create!(user: User.third, home: Home.first, start_date: "2020-09-03", end_date: "2020-09-07", no_of_guest: 2)
 Booking.create!(user: User.last, home: Home.first, start_date: "2020-08-22", end_date: "2020-09-02", no_of_guest: 4, status: "Pending")
+Booking.create!(user: User.third, home: Home.first, start_date: "2020-09-03", end_date: "2020-09-07", no_of_guest: 2)
+Booking.create!(user: User.first, home: Home.first, start_date: "2020-09-22", end_date: "2020-09-27", no_of_guest: 2)
 Booking.create!(user: User.last, home: Home.first, start_date: "2020-10-11", end_date: "2020-10-16", no_of_guest: 3)
-Booking.create!(user: User.first, home: Home.second, start_date: "2020-08-14", end_date: "2020-08-25", no_of_guest: 6, status: "Pending")
-Booking.create!(user: User.second, home: Home.second, start_date: "2020-09-12", end_date: "2020-10-04", no_of_guest: 3)
-Booking.create!(user: User.third, home: Home.second, start_date: "2020-07-31", end_date: "2020-08-06", no_of_guest: 6, status: "Pending")
-Booking.create!(user: User.first, home: Home.third, start_date: "2020-09-05", end_date: "2020-09-11", no_of_guest: 2)
-Booking.create!(user: User.third, home: Home.third, start_date: "2020-11-12", end_date: "2020-11-16", no_of_guest: 5)
+Booking.create!(user: User.second, home: Home.first, start_date: "2020-10-28", end_date: "2020-11-03", no_of_guest: 2, status: "Pending")
+Booking.create!(user: User.first, home: Home.first, start_date: "2021-06-30", end_date: "2021-07-14", no_of_guest: 4)
+Booking.create!(user: User.first, home: Home.second, start_date: "2020-08-05", end_date: "2020-08-08", no_of_guest: 3)
+Booking.create!(user: User.last, home: Home.second, start_date: "2020-08-09", end_date: "2020-08-13", no_of_guest: 3)
+Booking.create!(user: User.second, home: Home.second, start_date: "2020-08-18", end_date: "2020-08-25", no_of_guest: 3)
+Booking.create!(user: User.third, home: Home.second, start_date: "2020-08-28", end_date: "2020-09-03", no_of_guest: 6, status: "Pending")
+Booking.create!(user: User.last, home: Home.second, start_date: "2020-09-09", end_date: "2020-09-15", no_of_guest: 2)
+Booking.create!(user: User.first, home: Home.second, start_date: "2020-09-18", end_date: "2020-09-22", no_of_guest: 6, status: "Pending")
+Booking.create!(user: User.second, home: Home.second, start_date: "2020-09-28", end_date: "2020-10-04", no_of_guest: 3)
 Booking.create!(user: User.last, home: Home.third, start_date: "2020-08-13", end_date: "2020-08-18", no_of_guest: 3)
+Booking.create!(user: User.first, home: Home.third, start_date: "2020-09-05", end_date: "2020-09-11", no_of_guest: 2)
 Booking.create!(user: User.last, home: Home.third, start_date: "2020-10-10", end_date: "2020-10-11", no_of_guest: 4)
+Booking.create!(user: User.third, home: Home.third, start_date: "2020-11-12", end_date: "2020-11-16", no_of_guest: 5)
 
 
 puts "Creating new ownerships seeds"
@@ -88,9 +92,10 @@ Ownership.create!(user: User.first, home: Home.first, shares_of_ownership: 40, i
 Ownership.create!(user: User.second, home: Home.first, shares_of_ownership: 30, is_admin: true)
 Ownership.create!(user: User.third, home: Home.first, shares_of_ownership: 20, is_admin: false)
 Ownership.create!(user: User.last, home: Home.first, shares_of_ownership: 10, is_admin: false)
-Ownership.create!(user: User.first, home: Home.second, shares_of_ownership: 10, is_admin: true)
-Ownership.create!(user: User.second, home: Home.second, shares_of_ownership: 60, is_admin: true)
-Ownership.create!(user: User.third, home: Home.second, shares_of_ownership: 30, is_admin: false)
+Ownership.create!(user: User.first, home: Home.second, shares_of_ownership: 30, is_admin: true)
+Ownership.create!(user: User.second, home: Home.second, shares_of_ownership: 40, is_admin: true)
+Ownership.create!(user: User.third, home: Home.second, shares_of_ownership: 20, is_admin: true)
+Ownership.create!(user: User.last, home: Home.second, shares_of_ownership: 10, is_admin: false)
 Ownership.create!(user: User.second, home: Home.third, shares_of_ownership: 25, is_admin: true)
 Ownership.create!(user: User.first, home: Home.third, shares_of_ownership: 25, is_admin: true)
 Ownership.create!(user: User.third, home: Home.third, shares_of_ownership: 25, is_admin: true)
