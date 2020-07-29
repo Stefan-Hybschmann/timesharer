@@ -39,10 +39,10 @@ stefan.photo.attach(io: prof_pic, filename: 'stefan.jpg', content_type: 'image/j
 prof_pic1 = URI.open('https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595949687/TimeSharer/Billy_Leung_Square_g9srgt.jpg')
 billy.photo.attach(io: prof_pic1, filename: 'billy.jpg', content_type: 'image/jpg')
 
-prof_pic2 = URI.open('https://image.shutterstock.com/z/stock-vector-gray-avatar-icon-design-photo-placeholder-icon-1274338147.jpg')
+prof_pic2 = URI.open('https://res.cloudinary.com/dkdlmrgaf/image/upload/v1596036018/TimeSharer/Jea_rjnfka.jpg')
 jea.photo.attach(io: prof_pic2, filename: 'copenhagen.png', content_type: 'image/jpg')
 
-prof_pic3 = URI.open('https://image.shutterstock.com/z/stock-vector-gray-avatar-icon-design-photo-placeholder-icon-1274338147.jpg')
+prof_pic3 = URI.open('https://res.cloudinary.com/dkdlmrgaf/image/upload/v1596036053/TimeSharer/Juljan_qob4b3.png')
 juljan.photo.attach(io: prof_pic3, filename: 'copenhagen.png', content_type: 'image/jpg')
 
 
@@ -67,19 +67,27 @@ cielo_y_mar.save
 
 puts "Creating new bookings seeds"
 Booking.create!(user: User.first, home: Home.first, start_date: "2020-08-01", end_date: "2020-08-05", no_of_guest: 6)
-Booking.create!(user: User.first, home: Home.first, start_date: "2021-06-30", end_date: "2021-07-28", no_of_guest: 4)
+Booking.create!(user: User.first, home: Home.first, start_date: "2021-06-30", end_date: "2021-07-14", no_of_guest: 4)
+Booking.create!(user: User.first, home: Home.first, start_date: "2020-09-22", end_date: "2020-09-27", no_of_guest: 2)
 Booking.create!(user: User.second, home: Home.first, start_date: "2020-08-10", end_date: "2020-08-18", no_of_guest: 4)
-Booking.create!(user: User.last, home: Home.first, start_date: "2020-08-22", end_date: "2020-09-04", no_of_guest: 4, status: "Pending")
+Booking.create!(user: User.second, home: Home.first, start_date: "2020-10-28", end_date: "2020-11-03", no_of_guest: 2, status: "Pending")
+Booking.create!(user: User.third, home: Home.first, start_date: "2020-09-03", end_date: "2020-09-07", no_of_guest: 2)
+Booking.create!(user: User.last, home: Home.first, start_date: "2020-08-22", end_date: "2020-09-02", no_of_guest: 4, status: "Pending")
+Booking.create!(user: User.last, home: Home.first, start_date: "2020-10-11", end_date: "2020-10-16", no_of_guest: 3)
+Booking.create!(user: User.first, home: Home.second, start_date: "2020-08-14", end_date: "2020-08-25", no_of_guest: 6, status: "Pending")
 Booking.create!(user: User.second, home: Home.second, start_date: "2020-09-12", end_date: "2020-10-04", no_of_guest: 3)
 Booking.create!(user: User.third, home: Home.second, start_date: "2020-07-31", end_date: "2020-08-06", no_of_guest: 6, status: "Pending")
 Booking.create!(user: User.first, home: Home.third, start_date: "2020-09-05", end_date: "2020-09-11", no_of_guest: 2)
+Booking.create!(user: User.third, home: Home.third, start_date: "2020-11-12", end_date: "2020-11-16", no_of_guest: 5)
+Booking.create!(user: User.last, home: Home.third, start_date: "2020-08-13", end_date: "2020-08-18", no_of_guest: 3)
 Booking.create!(user: User.last, home: Home.third, start_date: "2020-10-10", end_date: "2020-10-11", no_of_guest: 4)
 
 
 puts "Creating new ownerships seeds"
-Ownership.create!(user: User.first, home: Home.first, shares_of_ownership: 50, is_admin: true)
+Ownership.create!(user: User.first, home: Home.first, shares_of_ownership: 40, is_admin: true)
 Ownership.create!(user: User.second, home: Home.first, shares_of_ownership: 30, is_admin: true)
-Ownership.create!(user: User.last, home: Home.first, shares_of_ownership: 20, is_admin: false)
+Ownership.create!(user: User.third, home: Home.first, shares_of_ownership: 20, is_admin: false)
+Ownership.create!(user: User.last, home: Home.first, shares_of_ownership: 10, is_admin: false)
 Ownership.create!(user: User.first, home: Home.second, shares_of_ownership: 10, is_admin: true)
 Ownership.create!(user: User.second, home: Home.second, shares_of_ownership: 60, is_admin: true)
 Ownership.create!(user: User.third, home: Home.second, shares_of_ownership: 30, is_admin: false)
