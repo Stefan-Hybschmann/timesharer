@@ -29,7 +29,6 @@ h1,h2,h3,h4,h5,h6 {
 
 /* Header Style */
 header {
-	position: absolute;
 	z-index: 99999;
   width: 100%;
   top: 0;
@@ -324,7 +323,7 @@ span.address{
 	 border-bottom-style: solid;
 	 border-bottom-color: sandybrown;
 	 border-bottom-width: 2px;
-	 
+
  }
  .pl-10{
 	padding-left: 1rem;
@@ -337,6 +336,21 @@ span.address{
  .pt-10{
 	 padding-top: 4rem;
  }
+ .pl-10{
+	padding-left: 1rem;
+ }
+
+ .pr-10{
+	padding-right: 1rem;
+}
+
+ .pt-10{
+	 padding-top: 4rem;
+ }
+
+ .pb-10{
+	padding-top: 1.5rem;
+}
 
  .pb-10{
 	padding-top: 1.5rem;

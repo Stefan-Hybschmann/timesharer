@@ -1,4 +1,4 @@
-<div class="container-fluid" style="margin-top: 80px; margin-bottom:15px">
+<!-- <div class="container-fluid" style="margin-top: 80px; margin-bottom:15px">
   <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="9000">
     <div class="carousel-inner row w-10 mxauto" role="listbox">
       <div class="carousel-item1 one col-md-4 active">
@@ -29,22 +29,23 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-</div>
+</div> -->
 
-<!-- <div class="image-banner">
+<div class="image-banner">
   <img class="banner-image-left" src="https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595910044/TimeSharer/copenhagen_interior_5_c0sfot.jpg" alt="vacation home">
   <img class="banner-image-main" src="https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595909712/TimeSharer/copenhagen_interior_4_e091dp.jpg" alt="vacation home">
   <img class="banner-image-right" src="https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595908896/TimeSharer/copenhagen_interior_1_zhn0mt.png">
-</div> -->
+</div>
 
 <div class="container">
-  <div class="row">
+  <div class="d-flex justify-content-center align-items-center">
     <div class="calendar">
       <div id="bookings-calendar" data-bookings="<%= @bookings_json %>"></div>
     </div>
+
     <div class="col-xs-12 col-md-4 col-lg-4">
-      <div>
-        <div class="home-show-cards">
+      <div class="">
+        <div class="home-show-cards pr-10">
           <div class="home-show-cards-image">
             <%= cl_image_tag @home.photo.key, crop: :fill %>
           </div>
@@ -56,31 +57,90 @@
             <p><i class="fas fa-map-marker-alt"></i> <%= @home.address %>, <%= @home.city %></p>
             <p><i class="fas fa-users"></i>Up to <%= @home.maximum_no_of_guest %> guests</p>
             <p><i class="fas fa-bed"></i><%= @home.no_of_bed %> beds available</p>
-            <p><i class="fas fa-user-circle"></i>Owners: <%= current_user.name %></p>
+            <p><i class="fas fa-sort-amount-down"></i>Priority: <%= @home.ranking %></p>
+            <%= link_to home_ownerships_path(@home), class: "edit-icon" do %>
+              <i class="fas fa-user-circle"></i>See owners
+            <% end %>
           </div>
         </div>
       </div>
       <br>
-      <%= render 'bookings/form', home: @home, booking: @booking %>
     </div>
   </div>
 </div>
 
-<div class="leave-note">
-  <h5>Leave a note</h5>
-</div>
-<div class="post-form mb-4">
-  <%= image_tag "https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595508571/TimeSharer/stefan_profile_z9orch.jpg", class: "avatar img avatar-note"%>
-  <%= simple_form_for ([@home, @note]), html: { class: "form-inline note-form " } do |f| %>
-  <div class="form-group grow-one">
-    <%= f.input :content, label: false, class: "inpt" %>
-    <%= f.submit 'Comment', class: "btn btn-info note-btn"%>
+<div class="text-center pt-10">
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="">
+      <!-- Button trigger modal -->
+      <div class="pr-10">
+        <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#booking">Make a booking<a>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="booking" tabindex="-1" role="dialog" aria-labelledby="booking" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="pb-10 pr-10">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="">
+                <div class="d-flex justify-content-center align-items-center">
+                  <div class="" style="width: 400px; margin-bottom: 40px;">
+                    <%= render 'bookings/form', home: @home, booking: @booking %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="">
+      <!-- Button trigger modal -->
+      <div class="pl-10">
+        <a href="#" class="btn btn-info" data-toggle="modal" data-target="#leave">Leave a note<a>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="leave" tabindex="-1" role="dialog" aria-labelledby="leave" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="pb-10 pr-10">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="">
+                <div class="d-flex justify-content-center align-items-center">
+                  <div class="" style="width: 400px; margin-bottom: 40px;">
+                    <div class="post-form-leave mb-4">
+                      <%= image_tag "https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595508571/TimeSharer/stefan_profile_z9orch.jpg", class: "avatar img avatar-note"%>
+                      <%= simple_form_for ([@home, @note]), html: { class: "form-inline note-form " } do |f| %>
+                      <div class="form-group grow-one">
+                        <%= f.input :content, label: false, class: "inpt" %>
+                        <%= f.submit 'Comment', class: "btn btn-info note-btn"%>
+                      </div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <% end %>
 </div>
 
-<div class="notess">
-  <% @home.notes.each do |note| %>
+  <div class="notess">
+    <% @home.notes.each do |note| %>
     <div class="note-post mt-3">
       <%= image_tag "https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595508571/TimeSharer/stefan_profile_z9orch.jpg", class: "avatar avatar-note postt"%>
       <div class="note-details">
@@ -95,11 +155,15 @@
         </div>
       </div>
     </div>
-  <% end %>
+    <% end %>
+  </div>
+
+<div class="container pb-10" style="width: 100%;">
+  <div id="map"
+    style="width: 100%; height: 300px; border-radius: 4px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
 
-<div id="map"
-style="width: 50%; height: 600px; border-radius: 4px;"
-data-markers="<%= @markers.to_json %>"
-data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
+

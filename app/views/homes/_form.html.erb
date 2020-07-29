@@ -1,5 +1,5 @@
 <div class="add-home-form">
-  <h1>Create Your New Home</h1> 
+  <h1>Create Your New Home</h1>
   <br>
   <%= simple_form_for(@home) do |f| %>
     <%= f.input :home_name %>
@@ -20,9 +20,9 @@
       <%= number_field_tag :shares_of_ownership %>
     </div>
     <br>
-    <%= f.input :ranking, :collection => %w[First\ come\ first\ served Larger\ shares\ of\ ownerships], include_blank: false, include_hidden: false, prompt: "Select criteria" %>
+    <%= f.input :ranking, :collection => %w[first\ come\ first\ served shares\ of\ ownerships], include_blank: false, include_hidden: false, prompt: "Select criteria" %>
     <br>
-    
+
     <%= f.input :photo %>
     <br>
 

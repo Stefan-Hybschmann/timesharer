@@ -1,0 +1,7 @@
+<div class="simpl-form-booking">
+  <%= simple_form_for ([home, ownership])  do |f| %>
+    <i class="fas fa-percent"></i><%= f.input :shares_of_ownership, as: :float %>
+    <br>
+    <%= f.submit 'Update!', class: "btn btn-info" %>
+  <% end %>
+</div>

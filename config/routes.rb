@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :bookings, only: [:index, :edit, :update, :destroy]
   resources :users, only: [:show]
   resources :notes, only: [:index, :new, :create, :destroy]
+  resources :ownerships, only: [:edit, :update]
 end
