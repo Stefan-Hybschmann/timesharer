@@ -29,11 +29,8 @@
             <td><%= booking.status %></td>
             <td>
               <% if booking.ownership.greater_shares_of_ownership?(current_user) && booking.status == 'Pending' %>
-                <!-- <a href="#" class="text-info">approve</a> -->
-                <!-- booking.status = 'Confirmed' -->
-                <%= link_to 'Approve', home_path(booking.home), data: { confirm: 'Approve booking?'}, class: 'btn btn-info' %>
-                <!-- booking.status = 'Rejected' -->
-                <%= link_to 'Reject', home_path(booking.home), data: { confirm: 'Are you sure to reject?'}, class: "btn btn-outline-secondary" %>
+                <%= link_to 'Approve', approve_home_booking_path(booking.home, booking), data: { confirm: 'Approve booking?'}, class: 'btn btn-info' %>
+                <%= link_to 'Reject', reject_home_booking_path(booking.home, booking), data: { confirm: 'Are you sure to reject?'}, class: "btn btn-outline-secondary" %>
               <% end %>
             </td>
           </tr>
