@@ -18,6 +18,15 @@ const adjustCalendarSize = () => {
   }
 }
 
+const colorButtons = () => {
+  const prevButton = document.querySelector(".fc-prev-button")
+  const nextButton = document.querySelector(".fc-next-button")
+  console.log(prevButton, nextButton)
+  prevButton.style.backgroundColor = '#065143'
+  nextButton.style.backgroundColor = '#065143'
+}
+
+
 const initBookingsCalendar = () => {
   const calendarEl = getCalendarElement();
   if (calendarEl) {
@@ -28,7 +37,10 @@ const initBookingsCalendar = () => {
     });
 
     calendar.render();
+    colorButtons();
   }
 };
+
+
 
 export { initBookingsCalendar, adjustCalendarSize };

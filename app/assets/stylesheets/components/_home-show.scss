@@ -118,6 +118,22 @@
   padding-top: 16px;
 }
 
+.fc-header-toolbar {
+  padding: 0 8px;
+}
+
+.fc-icon-chevron-left {
+  color: #fdc65a;
+}
+
+.fc-icon-chevron-right {
+  color: #fdc65a;
+}
+
+.fc-today-button .fc-button {
+  background-color: #fdc65a;
+}
+
 .home-show-cards {
   position: relative;
   background-color: white;
@@ -159,6 +175,22 @@
 
 .home-show-cards-button {
   margin-top: 20px;
-  border: solid #065143 1px;
   border-radius: 4px;
+  border: solid rgba(0, 0, 0, 0.2) 1px;
+}
+
+.show-bookings-button {
+  margin-left: 201px;
+  background-color: #065143;
+  border: none;
+  margin-top: -16px;
+}
+
+.text-center {
+  margin-top: 5px;
+}
+
+.modal-content {
+  border-radius: 4px;
+  padding: 4px;
 }

@@ -1,13 +1,14 @@
 .container-of-cards {
   margin: 0 auto;
   background-color: #FFFFFE;
-  text-align: center;
+  text-align: left;
   border-radius: 4px;
 }
 
 .container-of-cards h1 {
   padding-top: 24px;
   margin: 24px auto;
+  margin-left: 78px;
   color: #065143;
 }
 
@@ -27,7 +28,7 @@
   width: 550px;
   box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
   border-radius: 4px;
-  margin: 0 auto;
+  margin: 24px auto;
 }
 
 .home-cards-image img {
@@ -41,7 +42,7 @@
 
 .home-cards-body h6 {
   font-weight: bold;
-  margin: 10px 0 0 60px;
+  margin: 10px 0 8px 32px;
   text-align: left;
   color: #065143;
 }
@@ -56,3 +57,20 @@
 .home-cards-hr {
   width: 80%;
 }
+
+.create-home-btn {
+  width: 550px;
+  border-radius: 4px;
+  margin-left: 78px;
+  margin-bottom: 16px;
+}
+
+
+
+
+
+
+
+
+
+

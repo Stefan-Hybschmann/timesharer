@@ -74,7 +74,7 @@ class BookingsController < ApplicationController
   def destroy
     home = @booking.home
     @booking.destroy
-    redirect_to home_bookings_path(home), notice: 'Your booking was successfully deleted!'
+    redirect_to bookings_path, notice: 'Your booking was successfully deleted!'
   end
 
   private
