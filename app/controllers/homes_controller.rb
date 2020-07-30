@@ -17,7 +17,7 @@ class HomesController < ApplicationController
     @booking = Booking.new
     authorize @home
     @note = Note.new
-    @notes = Note.all
+    @notes = @home.notes.order(created_at: :desc)
 
     @homes = Home.geocoded
     @markers = [

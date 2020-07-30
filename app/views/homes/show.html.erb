@@ -5,6 +5,7 @@
 </div>
 
 <div class="container">
+  <h1 class="booking-header">Make a booking of <%= @home.home_name %></h1>
   <div class="calendar-and-description-box d-flex justify-content-center align-items-center">
     <div class="calendar">
       <div id="bookings-calendar" data-bookings="<%= @bookings_json %>"></div>
@@ -27,14 +28,19 @@
             <%= link_to home_ownerships_path(@home), class: "edit-icon" do %>
               <i class="fas fa-user-circle"></i>See owners
             <% end %>
+            <%= link_to home_bookings_home_path, class: "search-icon" do %>
+              <i class="fas fa-search"></i>Show all bookings
+            <% end %>
             <!-- <p><i class="fas fa-edit"></i><%= link_to "Edit home", edit_home_path(@home) %></p> -->
-            <br>
+
+
 
             <div class="home-show-cards-button">
               <!-- Button trigger modal -->
               <div>
                 <a href="#" class="btn btn-info w-100" data-toggle="modal" data-target="#booking">Make a booking</a>
               </div>
+            </div>
 
 
               <!-- Modal -->
@@ -66,16 +72,13 @@
     </div>
   </div>
 </div>
-<div class="">
-  <%= link_to 'Show all bookings', home_bookings_home_path, class: "show-bookings-button btn btn-outline-info" %>
-</div>
-
 <div class="text-center">
+  <h1 class="note-header">Notes</h1>
   <div class="d-flex justify-content-center align-items-center">
     <div class="">
       <!-- Button trigger modal -->
       <div class="pl-10">
-        <a href="#" class="btn btn-outline-secondary" data-toggle="modal" data-target="#leave">Leave a note<a>
+        <a href="#" class="leave-note-button btn" data-toggle="modal" data-target="#leave">Leave a note<a>
       </div>
 
       <!-- Modal -->
@@ -112,7 +115,7 @@
 </div>
 
 <div class="notess">
-  <% @home.notes.each do |note| %>
+  <% @notes.each do |note| %>
     <div class="note-post mt-3">
       <%= image_tag "https://res.cloudinary.com/dkdlmrgaf/image/upload/v1595508571/TimeSharer/stefan_profile_z9orch.jpg", class: "avatar avatar-note postt"%>
       <div class="note-details">
@@ -131,7 +134,7 @@
         <hr class="note-hr">
         <div class="actions">
           <div class="pr-10">
-          <%= link_to 'Edit', note_path(note), method: :delete, class: "note-button btn btn-outline-info" %>
+          <%= link_to 'Edit', note_path(note), method: :delete, class: "note-button btn btn-outline-secondary" %>
           </div>
           <%= link_to 'Delete', note_path(note), method: :delete, class: "note-button btn btn-outline-secondary" %>
         </div>

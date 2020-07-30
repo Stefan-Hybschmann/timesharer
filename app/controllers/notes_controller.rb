@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
   def index
-    @notes = policy_scope(Note)
+    @notes = policy_scope(Note).order(created_at: :desc)
   end
 
   def new
