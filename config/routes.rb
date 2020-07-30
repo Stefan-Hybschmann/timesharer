@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create] do
       member do
         get '/pending', to: 'bookings#pending', as: :pending
+        get '/approve', to: 'bookings#approve', as: :approve
+        get '/reject', to: 'bookings#reject', as: :reject
       end
     end
     member do

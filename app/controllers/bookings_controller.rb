@@ -71,6 +71,22 @@ class BookingsController < ApplicationController
     end
   end
 
+  def approve
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.status = 'Confirmed'
+    @booking.save
+    redirect_to home_bookings_home_path(@booking.home)
+  end
+
+  def reject
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.status = 'Rejected'
+    @booking.save
+    redirect_to home_bookings_home_path(@booking.home)
+  end
+
   def destroy
     home = @booking.home
     @booking.destroy
