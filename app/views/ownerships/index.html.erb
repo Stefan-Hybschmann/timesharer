@@ -31,6 +31,9 @@
       <%= cl_image_tag @home.photo.key, class: "users-home-img", crop: :fill %>
     </div>
   </div>
+  <div>
+    <%= link_to 'Return to Overview', home_path(@home), class: 'go-back-button btn btn-info' %>
+  </div>
 </div>
 
 
