@@ -77,7 +77,7 @@ class HomesController < ApplicationController
   def event_color(user)
     color = '#065143'
     case user.name
-    when 'Stefan Hybschmann' then color = '#e9c46a'
+    when 'Stefan' then color = '#e9c46a'
     when 'Billy' then color = '#065143'
     when 'Juljan' then color = '#227c9d'
     when 'Jea' then color = '#f28482'

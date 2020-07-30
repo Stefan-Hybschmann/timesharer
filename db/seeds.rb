@@ -28,7 +28,7 @@ puts "All homes have been deleted"
 puts "All users have been deleted"
 
 puts "Creating new user seeds"
-stefan = User.create!(name: "Stefan Hybschmann", email: "stefan@stefan.com", password: '123456', phone_number: '+44 12345678')
+stefan = User.create!(name: "Stefan", email: "stefan@stefan.com", password: '123456', phone_number: '+44 12345678')
 billy = User.create!(name: "Billy", email: "billy@billy.com", password: '123456', phone_number: '+852 87654321')
 jea = User.create!(name: "Jea", email: "jea@jea.com", password: '123456', phone_number: '12345678')
 juljan = User.create!(name: "Juljan", email: "juljan@juljan.com", password: '123456', phone_number: '987654321')
