@@ -1,7 +1,4 @@
-
-
 body {
-  font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -72,30 +69,6 @@ header .navbar {
 	padding-top: 80px;
 }
 
-.banner-item-01 {
-	padding: 300px 0px;
-	background-image: url('https://cdn-1.matterport.com/apifs/models/wZEzJHC5Nvu/images/tct3r5T3B8t/tct3r5T3B8t-Living_Room.jpg?t=2-5bb60d41494dfe34774febe6cc7be28aba274df4-1596020906-1&width=1920&height=1080&fit=crop&disable=upscale');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-}
-
-.banner-item-02 {
-	padding: 300px 0px;
-	background-image: url('https://wallpapercave.com/wp/wp2406649.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-}
-
-.banner-item-03 {
-	padding: 300px 0px;
-	background-image: url('https://cdn-1.matterport.com/apifs/models/wZEzJHC5Nvu/images/tct3r5T3B8t/tct3r5T3B8t-Living_Room.jpg?t=2-5bb60d41494dfe34774febe6cc7be28aba274df4-1596020906-1&width=1920&height=1080&fit=crop&disable=upscale');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-}
-
 .banner .banner-item {
 	max-height: 600px;
 }
@@ -106,53 +79,6 @@ header .navbar {
 	transform: translateY(-50%);
 	text-align: center;
 	width: 100%;
-}
-
-.banner .text-content h4 {
-	color: #f33f3f;
-	font-size: 22px;
-	text-transform: uppercase;
-	font-weight: 700;
-	margin-bottom: 15px;
-}
-
-.banner .text-content h2 {
-	color: #fff;
-	font-size: 62px;
-	text-transform: uppercase;
-	letter-spacing: 5px;
-}
-
-.owl-banner .owl-dots .owl-dot {
-  border-radius: 3px;
-}
-.owl-banner .owl-dots {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 30px;
-}
-.owl-banner .owl-dots .owl-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin: 0 10px;
-    background-color: #fff;
-    opacity: 0.5;
-}
-.owl-banner .owl-dots .owl-dot:focus {
-    outline: none
-}
-.owl-banner .owl-dots .owl-dot.active {
-    background-color: #fff;
-    opacity: 1;
 }
 
 /* Footer */
@@ -189,11 +115,7 @@ footer .inner-content p a {
 		font-size: 36px;
 		letter-spacing: 0.5px;
 	}
-	.banner-item-01,
-	.banner-item-02,
-	.banner-item-03 {
-		padding: 180px 0px;
-	}
+
 	.page-heading .text-content h4 {
 		font-size: 22px;
 	}
@@ -299,7 +221,6 @@ span.address{
 
 	.logo-first{
 		color: #fff;
-    text-transform: uppercase;
     font-size: 24px;
     font-weight: 700;
     transition: all .3s ease 0s;

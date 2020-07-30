@@ -17,7 +17,6 @@
     margin-bottom: 20px;
 }
 
-
 .post-form {
   margin: 0 auto;
   width: 564px;
@@ -27,20 +26,12 @@
   border-radius: 15px;
   height: 122px;
   padding: 0 13px;
-  box-shadow: 0 0 1.4px black;
-}
-
-.note_content {
-  flex-grow: 1 !important;
-}
-
-#note_content {
-  width: 100%;
-  border-radius: 6px 0 0 6px;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
 .avatar-note {
   margin-right: 21px;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
   height: 60px;
   width: 60px;
   &.postt{
@@ -58,16 +49,14 @@
   flex-grow: 1;
 }
 
-.calendar {
-  color: #065143;
-}
-
 .title {
   display: flex;
   justify-content: space-between;
-  border-bottom: 0.5px solid gray;
 }
 
+.date {
+  margin-right: 28px;
+}
 .notess{
   display: flex;
   flex-direction: column;
@@ -78,13 +67,8 @@
   display: flex;
   justify-content: baseline;
   justify-content: flex-end;
-  border-top: 0.5px solid gray;
   padding-top: 7px;
-}
-
-.note-details{
-  flex-grow: 1;
-  padding: 0 15px;
+  margin-right: 24px;
 }
 
 .leave-note {
@@ -96,38 +80,66 @@
   display: flex;
   align-items: center;
   width: 564px;
-  padding: 23px 8px;
-  border-radius: 5px;
+  padding: 8px 8px;
+  border-radius: 4px;
   background: white;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.note-details {
+  width: 100%;
+}
+
+.note-post p {
+  font-weight: lighter;
+  padding-left: 8px;
+}
+
+.note-hr {
+  width: 90%;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 
 .note-btn {
   height: 62px;
-  border-radius: 0 6px 6px 0 !important;
+  border-radius: 0 4px 4px 0 !important;
+}
+
+.note-button {
+  padding: 2px 16px;
+}
+
+.calendar {
+  color: #065143;
+  margin-left: -64px;
+  background-color: white;
+  border-radius: 4px;
+  padding-top: 16px;
 }
 
 .home-show-cards {
-  display: flex;
   position: relative;
   background-color: white;
-  height: 250px;
-  width: 630px;
+  height: 520px;
+  width: 360px;
   box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
   border-radius: 4px;
-  margin: 0 auto;
+  margin: 18px 0 0 63px;
 }
 
 .home-show-cards-image img {
-  height: 250px;
-  width: 250px;
+  height: 216px;
+  width: 100%;
   object-fit: cover;
   border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
-.home-show-cards-body h6 {
+.home-show-cards-body h4 {
   font-weight: bold;
-  margin: 10px 0 0 32px;
+  margin-left: 32px;
+  margin-top: 16px;
   text-align: left;
   color: #065143;
 }
@@ -141,4 +153,12 @@
 
 .home-show-cards-hr {
   width: 80%;
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+}
+
+.home-show-cards-button {
+  margin-top: 20px;
+  border: solid #065143 1px;
+  border-radius: 4px;
 }

@@ -1,5 +1,5 @@
 meta_product_name: "Product Name"
-meta_title: "Product name - Product tagline"
-meta_description: "Relevant description"
+meta_title: "TimeSharer"
+meta_description: "A simple booking system for your vacation home"
 meta_image: "cover-image.jpg" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"
