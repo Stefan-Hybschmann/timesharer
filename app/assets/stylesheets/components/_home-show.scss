@@ -1,3 +1,15 @@
+.booking-header {
+  margin-left: 34px;
+  margin-bottom: 16px;
+  color: #065143;
+}
+
+.note-header {
+  text-align: center;
+  color: #065143;
+  margin-top: 16px;
+}
+
 .simpl-form-booking {
     width: 400px;
     margin-left: 80px;
@@ -141,7 +153,7 @@
   width: 360px;
   box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
   border-radius: 4px;
-  margin: 18px 0 0 63px;
+  margin: 4px 0 0 63px;
 }
 
 .home-show-cards-image img {
@@ -174,17 +186,22 @@
 }
 
 .home-show-cards-button {
-  margin-top: 20px;
+  margin-top: 16px;
   border-radius: 4px;
   border: solid rgba(0, 0, 0, 0.2) 1px;
 }
 
-.show-bookings-button {
-  margin-left: 201px;
+.leave-note-button {
   background-color: #065143;
   border: none;
-  margin-top: -16px;
+  color: #fdc65a;
+  margin-top: 16px;
+  width: 200px;
 }
+
+// .show-bookings-button {
+//   width: 100%;
+// }
 
 .text-center {
   margin-top: 5px;
