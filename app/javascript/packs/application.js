@@ -14,11 +14,12 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 
 import { initBookingsCalendar, adjustCalendarSize } from '../plugins/bookings-calendar';
-import {flatpicker} from "../plugins/flatpickr"
+import {flatpicker} from "../plugins/flatpickr";
 
 import { initMapbox } from '../plugins/init_mapbox';
 
 import { showBookingConfirmationModal } from '../plugins/booking-confirmation';
+import { sweet } from '../plugins/sweet_alert';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -28,6 +29,7 @@ document.addEventListener('turbolinks:load', () => {
   initBookingsCalendar();
   initMapbox();
   showBookingConfirmationModal();
+  sweet();
 });
 
 document.addEventListener('readystatechange', (event) => {

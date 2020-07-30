@@ -31,6 +31,48 @@
       <%= cl_image_tag @home.photo.key, class: "users-home-img", crop: :fill %>
     </div>
   </div>
+  <!-- button for modal -->
+
+  <div class="">
+    <a href="#" class="add-owner leave-note-button btn" data-toggle="modal" data-target="#leave">Invite a co-owner<a>
+  </div>
+  <!-- modal -->
+  <div class="modal fade" id="leave" tabindex="-1" role="dialog" aria-labelledby="leave" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content-owner">
+        <div class="pr-10">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body-owner">
+          <div class="">
+            <div class="d-flex justify-content-center align-items-center owner-stuff">
+                    <div class="post-form-leave-owner mb-4">
+                      <%= form_with url: '#', html: { class: "form-group note-form" } do |f| %>
+                        <div class="form-group grow-one">
+                          <%= f.label :email %>
+                          <%= text_field_tag :email, "", class: "form-control" %>
+                        </div>
+                        <div class="form-group grow-one">
+                          <%= f.label :shares_of_ownership %>
+                          <%= number_field :shares_of_ownership, :percentage, in: 1.0..100.0, step: 0.5, class: "form-control" %>
+                        </div>
+                          <button type="button" class="sweet btn btn-info" data-dismiss="modal" aria-label="Close">
+                            <p>Send</p>
+                          </button>
+                      <% end %>
+                    </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
   <div>
     <%= link_to 'Return to Overview', home_path(@home), class: 'go-back-button btn btn-info' %>
   </div>
