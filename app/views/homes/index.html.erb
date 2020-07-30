@@ -49,13 +49,15 @@
           </div>
           <div class="home-cards-body">
             <h6><strong><%= home.home_name %></strong></h6>
-            <hr class="home-cards-hr">
             <p><i class="fas fa-globe"></i><%= home.country %></p>
             <p><i class="fas fa-map-marker-alt"></i> <%= home.address %>, <%= home.city %></p>
             <p><i class="fas fa-users"></i>Up to <%= home.maximum_no_of_guest %> guests</p>
+            <p><i class="fas fa-sort-amount-down"></i>Priority: <%= home.ranking %></p>
           </div>
         </div>
-        <hr>
+      <% end %>
+      <%= link_to new_home_path, class: "create-home-btn btn btn-info" do %>
+        <i class="fas fa-plus"></i>Add home
       <% end %>
     </div>
     <div class="col-12 col-md-6 col-lg-6">
